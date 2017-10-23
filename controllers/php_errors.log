@@ -1,0 +1,120 @@
+[13-Oct-2017 13:03:46 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2017-05%' for column 'ddate' at row 1 in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:47
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(47): PDO->query('DELETE FROM dtr...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(88): pdo_db->query('DELETE FROM dtr...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 47
+[13-Oct-2017 13:03:49 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2017-05%' for column 'ddate' at row 1 in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:47
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(47): PDO->query('DELETE FROM dtr...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(88): pdo_db->query('DELETE FROM dtr...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 47
+[13-Oct-2017 13:25:58 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2017-01%' for column 'ddate' at row 1 in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:47
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(47): PDO->query('DELETE FROM dtr...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(88): pdo_db->query('DELETE FROM dtr...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 47
+[13-Oct-2017 13:26:35 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2017-01%' for column 'ddate' at row 1 in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:47
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(47): PDO->query('DELETE FROM dtr...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(88): pdo_db->query('DELETE FROM dtr...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 47
+[13-Oct-2017 13:32:15 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2017-01%' for column 'ddate' at row 1 in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:47
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(47): PDO->query('DELETE FROM dtr...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(88): pdo_db->query('DELETE FROM dtr...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 47
+[13-Oct-2017 13:39:36 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'eid' doesn't have a default value in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:129
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(129): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(136): pdo_db->insertDataMulti(Array, 'id')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 129
+[13-Oct-2017 13:40:16 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'ddate' doesn't have a default value in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:129
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(129): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(135): pdo_db->insertDataMulti(Array, 'id')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 129
+[13-Oct-2017 13:40:36 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1364 Field 'ddate' doesn't have a default value in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:129
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(129): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(135): pdo_db->insertDataMulti(Array, 'id')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 129
+[13-Oct-2017 13:41:10 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:129
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(129): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(133): pdo_db->insertDataMulti(Array, 'id')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 129
+[13-Oct-2017 13:43:52 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:129
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(129): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(134): pdo_db->insertDataMulti(Array, 'id')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 129
+[13-Oct-2017 13:45:49 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1' for key 'PRIMARY' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:129
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(129): PDOStatement->execute(Array)
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(134): pdo_db->insertDataMulti(Array, 'id')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 129
+[13-Oct-2017 14:08:20 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'empid' in 'where clause' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php(38): PDO->query('SELECT * FROM b...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php(97): pdo_db->getData('SELECT * FROM b...')
+#2 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\db.php on line 38
+[13-Oct-2017 14:33:48 Asia/Manila] PHP Parse error:  syntax error, unexpected ';', expecting ')' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 103
+[13-Oct-2017 14:33:48 Asia/Manila] PHP Parse error:  syntax error, unexpected ';', expecting ')' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 103
+[13-Oct-2017 14:34:17 Asia/Manila] PHP Parse error:  syntax error, unexpected ';', expecting ')' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 103
+[13-Oct-2017 14:34:17 Asia/Manila] PHP Parse error:  syntax error, unexpected ';', expecting ')' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 103
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Warning:  strtotime() expects parameter 1 to be string, array given in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php on line 31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Stack trace:
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:0
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:110
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   3. strtotime() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php:31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Warning:  strtotime() expects parameter 1 to be string, array given in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php on line 31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Stack trace:
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:0
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:110
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   3. strtotime() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php:31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Warning:  strtotime() expects parameter 1 to be string, array given in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php on line 31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Stack trace:
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:0
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:110
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   3. strtotime() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php:31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Warning:  strtotime() expects parameter 1 to be string, array given in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php on line 31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Stack trace:
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:0
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:110
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   3. strtotime() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php:31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Warning:  strtotime() expects parameter 1 to be string, array given in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php on line 31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Stack trace:
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:0
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:110
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   3. strtotime() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php:31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Warning:  strtotime() expects parameter 1 to be string, array given in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php on line 31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Stack trace:
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:0
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:110
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   3. strtotime() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php:31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Warning:  strtotime() expects parameter 1 to be string, array given in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php on line 31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Stack trace:
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:0
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:110
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   3. strtotime() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php:31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Warning:  strtotime() expects parameter 1 to be string, array given in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php on line 31
+[13-Oct-2017 14:34:44 Asia/Manila] PHP Stack trace:
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:0
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php:110
+[13-Oct-2017 14:34:44 Asia/Manila] PHP   3. strtotime() C:\Users\sly\Desktop\UwAmp310\www\pgludtr\analyze.php:31
+[13-Oct-2017 14:45:07 Asia/Manila] PHP Parse error:  syntax error, unexpected ',' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 156
+[13-Oct-2017 14:45:09 Asia/Manila] PHP Parse error:  syntax error, unexpected ',' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 156
+[13-Oct-2017 14:45:10 Asia/Manila] PHP Parse error:  syntax error, unexpected ',' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 156
+[13-Oct-2017 14:49:00 Asia/Manila] PHP Parse error:  syntax error, unexpected '$analyzed' (T_VARIABLE) in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 143
