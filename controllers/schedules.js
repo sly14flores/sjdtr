@@ -10,6 +10,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			
 			scope.controls.schedule = {
 				description: opt,
+				flexible: opt,
 				morning_in: opt,
 				morning_cutoff: opt,
 				morning_out: opt,
@@ -283,6 +284,7 @@ $scope.views.onEdit = false;
 $scope.schedule_struct = {
 	id: 0,
 	description: "",
+	flexible: "No",
 	details: [
 		{id: 0, day: "Monday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")},
 		{id: 0, day: "Tuesday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")},

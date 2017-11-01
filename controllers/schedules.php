@@ -32,7 +32,8 @@ switch ($_GET['r']) {
 		$con = new pdo_db("schedules");
 		$con1 = new pdo_db("schedule_details");
 		
-		$schedule = $con->updateData(array("id"=>$_POST['id'],"description"=>$_POST['description']),"id");
+		$_POST['flexible'] = ($_POST['flexible']=="Yes")?1:0;
+		$schedule = $con->updateData(array("id"=>$_POST['id'],"description"=>$_POST['description'],"flexible"=>$_POST['flexible']),"id");
 		
 		// check for schedule_details entry		
 		$sql = "SELECT * FROM schedule_details WHERE schedule_id = $_POST[id]";
@@ -89,6 +90,8 @@ switch ($_GET['r']) {
 		$con = new pdo_db();
 		$schedule = $con->getData("SELECT * FROM schedules WHERE id = $_POST[id]");
 		$schedule_details = $con->getData("SELECT * FROM schedule_details WHERE schedule_id = $_POST[id]");
+		
+		$schedule[0]['flexible'] = ($schedule[0]['flexible'])?"Yes":"No";
 		
 		foreach ($schedule_details as $key => $value) {
 			unset($schedule_details[$key]['schedule_id']);

@@ -145,14 +145,25 @@ require_once 'authentication.php';
 					<form name="frmHolder.schedule" autocomplete="off" novalidate>
 						<fieldset>						
 							<div class="row">
-								<div class="span2">
+								<div class="span4">
 									<div class="control-group" ng-class="{'error': frmHolder.schedule.description.$invalid && frmHolder.schedule.description.$touched}">
 										<label><h2>Description</h2></label>
 										<div class="controls">
 											<input type="text" class="span4" name="description" ng-model="schedule.description" ng-disabled="controls.schedule.description" required>
 										</div>
 									</div>
-								</div>							
+								</div>
+								<div class="span2">
+									<div class="control-group">
+										<label><h2>Flexible?</h2></label>
+										<div class="controls">
+											<select class="span2" ng-model="schedule.flexible" ng-disabled="controls.schedule.flexible">
+												<option value="No">No</option>
+												<option value="Yes">Yes</option>
+											</select>
+										</div>
+									</div>
+								</div>								
 							</div>
 							<div ng-repeat="detail in schedule.details">
 							<h3 style="margin-bottom: 5px;">{{detail.day}}</h3>

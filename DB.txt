@@ -1,9 +1,1 @@
-ALTER TABLE `schedules` DROP `cutoff`;
-
-DROP cutoff
-
-ALTER TABLE `schedule_details` DROP `dayoff`, DROP `transcending`, DROP `transcending_days_no`;
-
-ALTER TABLE `schedule_details`  ADD `morning_cutoff` TIME NULL  AFTER `morning_in`;
-ALTER TABLE `schedule_details`  ADD `afternoon_cutoff` TIME NULL  AFTER `afternoon_in`;
-ALTER TABLE `schedule_details`  ADD `lunch_break_cutoff` TIME NULL  AFTER `morning_out`;
+ALTER TABLE `schedules`  ADD `flexible` INT(10) NOT NULL DEFAULT '0'  AFTER `description`;
