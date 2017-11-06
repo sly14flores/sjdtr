@@ -3,12 +3,15 @@
 class log_order {
 	
 	var $schedules;
+	var $flexible;
 	
 	function __construct($con,$id) {
 		
 		$schedule = $con->getData("SELECT schedule_id FROM employees WHERE id = $id");
+		$flexible = $con->getData("SELECT flexible FROM schedules WHERE id = ".$schedule[0]['schedule_id']);
+		$this->flexible = $flexible[0]['flexible'];
 		$schedules = $con->getData("SELECT * FROM schedule_details WHERE schedule_id = ".$schedule[0]['schedule_id']." ORDER BY id");
-		
+
 		foreach ($schedules as $key => $schedule) {
 			
 			unset($schedules[$key]['id']);
@@ -28,13 +31,25 @@ class log_order {
 		$lunch_cutoff = strtotime("$date ".$this->schedules[date("l",strtotime($date))]['lunch_break_cutoff']);
 		$afternoon_cutoff = strtotime("$date ".$this->schedules[date("l",strtotime($date))]['afternoon_cutoff']);
 
-		$tlog = strtotime($log);
-		
-		if ($tlog < $morning_cutoff) $allotment = array("morning_in"=>date("H:i:s",$tlog));
-		if ( ($tlog >= $morning_cutoff) && ($tlog < $lunch_cutoff) ) $allotment = array("morning_out"=>date("H:i:s",$tlog));
+		$tlog = strtotime($log['log']);
 
-		if ( ($tlog < $afternoon_cutoff) && ($tlog >= $lunch_cutoff) ) $allotment = array("afternoon_in"=>date("H:i:s",$tlog));
-		if ($tlog >= $afternoon_cutoff) $allotment = array("afternoon_out"=>date("H:i:s",$tlog));
+		if ($this->flexible) {
+			
+			if ($log['flexible']) { # Out
+				$allotment = array("morning_in"=>date("H:i:s",$tlog));
+			} else { # In
+				$allotment = array("afternoon_out"=>date("H:i:s",$tlog));
+			}			
+			
+		} else {
+
+			if ($tlog < $morning_cutoff) $allotment = array("morning_in"=>date("H:i:s",$tlog));
+			if ( ($tlog >= $morning_cutoff) && ($tlog < $lunch_cutoff) ) $allotment = array("morning_out"=>date("H:i:s",$tlog));
+
+			if ( ($tlog < $afternoon_cutoff) && ($tlog >= $lunch_cutoff) ) $allotment = array("afternoon_in"=>date("H:i:s",$tlog));
+			if ($tlog >= $afternoon_cutoff) $allotment = array("afternoon_out"=>date("H:i:s",$tlog));
+		
+		}
 		
 		return $allotment;
 

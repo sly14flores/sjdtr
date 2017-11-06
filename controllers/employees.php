@@ -107,7 +107,7 @@ switch ($_GET['r']) {
 				);
 
 				foreach ($logs as $log) {
-					$allotment = $analyze->allot($start,$log['log']);
+					$allotment = $analyze->allot($start,array("log"=>$log['log'],"flexible"=>$log['flexible']));
 					$prop = array_keys($allotment);
 					$analyzed[$prop[0]] = $allotment[$prop[0]];
 				};
@@ -148,7 +148,7 @@ switch ($_GET['r']) {
 				);
 
 				foreach ($logs as $log) {
-					$allotment = $analyze->allot($d['ddate'],$log['log']);
+					$allotment = $analyze->allot($d['ddate'],array("log"=>$log['log'],"flexible"=>$log['flexible']));
 					$prop = array_keys($allotment);
 					$analyzed[$prop[0]] = $allotment[$prop[0]];
 				};					

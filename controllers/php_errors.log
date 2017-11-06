@@ -118,3 +118,930 @@ Stack trace:
 [13-Oct-2017 14:45:09 Asia/Manila] PHP Parse error:  syntax error, unexpected ',' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 156
 [13-Oct-2017 14:45:10 Asia/Manila] PHP Parse error:  syntax error, unexpected ',' in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 156
 [13-Oct-2017 14:49:00 Asia/Manila] PHP Parse error:  syntax error, unexpected '$analyzed' (T_VARIABLE) in C:\Users\sly\Desktop\UwAmp310\www\pgludtr\controllers\employees.php on line 143
+[06-Nov-2017 10:39:54 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'flexible' in 'field list' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\db.php:38
+Stack trace:
+#0 C:\Users\sly\Desktop\UwAmp310\www\sjdtr\db.php(38): PDO->query('SELECT schedule...')
+#1 C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php(10): pdo_db->getData('SELECT schedule...')
+#2 C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php(137): log_order->__construct(Object(pdo_db), 2)
+#3 {main}
+  thrown in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\db.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:52:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:52:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:151
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:39 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:39 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:40 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:40 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 10:55:41 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 10:55:41 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:00 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:00 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'log' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 34
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Warning:  Illegal string offset 'flexible' in C:\Users\sly\Desktop\UwAmp310\www\sjdtr\analyze.php on line 38
+[06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110

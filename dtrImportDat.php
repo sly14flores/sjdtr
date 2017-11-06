@@ -24,6 +24,7 @@ function logsFiltered($logFile,$from,$to,$idFrom,$idTo) {
 		$logsUnfiltered[$i][0] = trim($line_txt[$i][0]);
 		$logsUnfiltered[$i][1] = trim($line_txt[$i][1]);
 		$logsUnfiltered[$i][2] = trim($line_txt[$i][2]);
+		$logsUnfiltered[$i][3] = trim($line_txt[$i][3]);
 	}
 	
 	// filter ID(s)
@@ -58,10 +59,11 @@ function logsFiltered($logFile,$from,$to,$idFrom,$idTo) {
 			$pid = $row[0];
 			$log = $row[1];
 			$machine = $row[2];
+			$flexible = $row[3];
 			
 			if (preg_match("/$year-$month-$dayc/i", $log)) {
 				
-				$logs[] = array("date"=>"$year-$month-$dayc","pers_id"=>$pid,"log"=>$log,"machine"=>$machine);		
+				$logs[] = array("date"=>"$year-$month-$dayc","pers_id"=>$pid,"log"=>$log,"machine"=>$machine,"flexible"=>$flexible);
 				
 			}
 
