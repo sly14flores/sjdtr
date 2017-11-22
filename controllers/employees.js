@@ -1,4 +1,4 @@
-var app = angular.module('employees', ['angularUtils.directives.dirPagination','ui.bootstrap','block-ui','bootstrap-modal','bootstrap-notify','account']);
+var app = angular.module('employees', ['angularUtils.directives.dirPagination','ui.bootstrap','block-ui','bootstrap-modal','bootstrap-notify','account','dtr-module']);
 
 app.directive('fileModel', ['$parse', function ($parse) {
 	return {
@@ -62,7 +62,7 @@ app.service('fileUpload', ['$http', function ($http) {
 	}
 }]);
 
-app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,blockUI) {
+app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,blockUI,dtr) {
 	
 	function appService() {
 		
@@ -345,7 +345,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 		};
 		
 		self.dtr = function(scope,regen) {
-			
+			console.log(scope);
 			if (scope.generate.month == null) {
 				scope.dtr = [];
 				return;
@@ -363,7 +363,8 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			  data: scope.generate
 			}).then(function mySucces(response) {
 								
-				scope.dtr = response.data;
+				scope.dtr = response.data.form;
+				scope.dtrReport = response.data.report;
 				scope.generate.regen = false;
 				blockUI.hide();
 				
@@ -496,9 +497,9 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			
 		};
 		
-		self.printDTR = function() {
+		self.printDTR = function(scope) {
 
-			$('#print-dtr').submit();
+			dtr.print(scope,{info: scope.personalInfo, month: scope.generate.month, year: scope.generate.year, logs: scope.dtrReport});
 			
 		};
 		
@@ -561,6 +562,7 @@ $scope.views.months = {
 // $scope.pop_employees_list();
 
 $scope.dtr = [];
+$scope.dtrReport = [];
 
 $scope.generate = {};
 $scope.generate.id = 0;

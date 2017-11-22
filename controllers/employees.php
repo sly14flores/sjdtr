@@ -179,7 +179,22 @@ switch ($_GET['r']) {
 			unset($dtr[$key]['eid']);
 		};
 		
-		echo json_encode($dtr);
+		$report = [];
+		foreach ($dtr as $key => $value) {
+			
+			$report[] = array(
+				"day"=>$value['sdate'],
+				"morning_in"=>($value['morning_in']=="00:00:00")?"-":$value['morning_in'],
+				"morning_out"=>($value['morning_out']=="00:00:00")?"-":$value['morning_out'],
+				"afternoon_in"=>($value['afternoon_in']=="00:00:00")?"-":$value['afternoon_in'],
+				"afternoon_out"=>($value['afternoon_out']=="00:00:00")?"-":$value['afternoon_out'],
+				"tardiness"=>"",
+			);
+			
+		};
+
+		
+		echo json_encode(array("form"=>$dtr,"report"=>$report));
 	
 	break;
 	

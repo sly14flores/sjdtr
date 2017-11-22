@@ -363,7 +363,7 @@ require_once 'authentication.php';
 								
 							</div>
 							<div class="tab-pane" id="dtr">
-								<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="appService.printDTR()" ng-disabled="generate.month == null"><i class="btn-icon-only icon-print"></i></a></div>
+								<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="appService.printDTR(this)" ng-disabled="generate.month == null"><i class="btn-icon-only icon-print"></i></a></div>
 								<div style="clear: both;"></div>
 								<form style="margin-top: 20px;"name="frmHolder.dtr" autocomplete="off">
 									<fieldset>
@@ -434,11 +434,7 @@ require_once 'authentication.php';
       <!-- /row --> 
     </div>
     <!-- /container --> 
-  <form id="print-dtr" method="post" action="reports/dtr.php" target="_blank">
-	<input type="hidden" name="id" value="{{generate.id}}">
-	<input type="hidden" name="month" value="{{generate.month}}">
-	<input type="hidden" name="year" value="{{generate.year}}">	
-  </form>
+
   </div>
   <!-- /main-inner --> 
 </div>
@@ -523,11 +519,10 @@ require_once 'authentication.php';
 <script src="modules/block-ui.js"></script>
 <script src="modules/bootstrap-notify.js"></script>
 <script src="modules/account.js"></script>
+<script src="modules/dtr.js"></script>
 
 <script src="jspdf/jspdf.min.js"></script>
-<script src="jspdf/faker.min.js"></script>
-<script src="jspdf/jspdf.plugin.autotable.src.js"></script>
-<script src="jspdf/jspdf-api.js"></script>
+<script src="jspdf/jspdf.plugin.autotable.js"></script>
 
 <script src="controllers/employees.js"></script>
 
