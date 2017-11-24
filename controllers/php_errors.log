@@ -1045,3 +1045,14 @@ Stack trace:
 [06-Nov-2017 11:03:01 Asia/Manila] PHP Stack trace:
 [06-Nov-2017 11:03:01 Asia/Manila] PHP   1. {main}() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
 [06-Nov-2017 11:03:01 Asia/Manila] PHP   2. log_order->allot() C:\Users\sly\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:110
+[24-Nov-2017 16:46:29 Asia/Manila] PHP Notice:  Undefined offset: 0 in C:\Users\SLY One\Desktop\UwAmp310\www\sjdtr\analyze.php on line 12
+[24-Nov-2017 16:46:29 Asia/Manila] PHP Stack trace:
+[24-Nov-2017 16:46:29 Asia/Manila] PHP   1. {main}() C:\Users\SLY One\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:0
+[24-Nov-2017 16:46:29 Asia/Manila] PHP   2. log_order->__construct() C:\Users\SLY One\Desktop\UwAmp310\www\sjdtr\controllers\employees.php:94
+[24-Nov-2017 16:53:12 Asia/Manila] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'schedule_id' in 'field list' in C:\Users\SLY One\Desktop\UwAmp310\www\sjdtr\db.php:38
+Stack trace:
+#0 C:\Users\SLY One\Desktop\UwAmp310\www\sjdtr\db.php(38): PDO->query('SELECT schedule...')
+#1 C:\Users\SLY One\Desktop\UwAmp310\www\sjdtr\analyze.php(10): pdo_db->getData('SELECT schedule...')
+#2 C:\Users\SLY One\Desktop\UwAmp310\www\sjdtr\controllers\employees.php(137): log_order->__construct(Object(pdo_db), 2)
+#3 {main}
+  thrown in C:\Users\SLY One\Desktop\UwAmp310\www\sjdtr\db.php on line 38

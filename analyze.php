@@ -7,7 +7,11 @@ class log_order {
 	
 	function __construct($con,$id) {
 		
+		$default = $con->getData("SELECT schedule_id FROM schedules WHERE schedule_default = 1");
 		$schedule = $con->getData("SELECT schedule_id FROM employees WHERE id = $id");
+		
+		if ($schedule[0]['schedule_id'] == 0) $schedule[0]['schedule_id'] = $default[0]['schedule_id'];
+			
 		$flexible = $con->getData("SELECT flexible FROM schedules WHERE id = ".$schedule[0]['schedule_id']);
 		$this->flexible = $flexible[0]['flexible'];
 		$schedules = $con->getData("SELECT * FROM schedule_details WHERE schedule_id = ".$schedule[0]['schedule_id']." ORDER BY id");
