@@ -1,1 +1,4 @@
-ALTER TABLE `schedules`  ADD `schedule_default` INT(10) NOT NULL DEFAULT '0'  AFTER `flexible`;
+ALTER TABLE `schedules`  ADD `flexible` INT(10) NOT NULL DEFAULT '0'  AFTER `description`;
+
+backlogs
+flexible after machine

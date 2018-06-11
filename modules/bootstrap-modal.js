@@ -51,14 +51,14 @@ angular.module('bootstrap-modal',[]).service('bootstrapModal', function($compile
 			if (hidden != null) hidden();
 		});
 		$('#label-modal-show').html(title);
-		$('#modal-show .modal-body').load(body);
+		$('#modal-show .modal-body').load(body,function() {
+			$timeout(function() {
+				$compile($('#modal-show .modal-body')[0])(scope);
+			},200);
+		});
 
 		var buttons = '<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>';
-		$('#modal-show .modal-footer').html(buttons);
-		
-		$timeout(function() {
-			$compile($('#modal-show .modal-body')[0])(scope);
-		},500);
+		$('#modal-show .modal-footer').html(buttons);		
 
 	}
 
