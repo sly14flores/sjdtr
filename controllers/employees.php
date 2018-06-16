@@ -110,7 +110,10 @@ switch ($_GET['r']) {
 					$allotment = $analyze->allot($start,array("log"=>$log['log'],"flexible"=>$log['flexible']));
 					$prop = array_keys($allotment);
 					$analyzed[$prop[0]] = $allotment[$prop[0]];
-				};
+				};				
+				
+				# manual logs
+				$analyzed = manualLogs($con,$analyzed,$_POST['id'],$start);
 				
 				$dtr[] = array("ddate"=>date("Y-m-d",strtotime($start)),
 						"eid"=>$_POST['id'],
@@ -147,6 +150,9 @@ switch ($_GET['r']) {
 					"afternoon_out"=>"00:00:00"
 				);
 
+				# manual logs
+				$analyzed = manualLogs($con,$analyzed,$_POST['id'],$d['ddate']);				
+				
 				foreach ($logs as $log) {
 					$allotment = $analyze->allot($d['ddate'],array("log"=>$log['log'],"flexible"=>$log['flexible']));
 					$prop = array_keys($allotment);
@@ -237,20 +243,28 @@ switch ($_GET['r']) {
 			$dtr[$key]['afternoon_in'] = date("h:i:s A",strtotime($value['afternoon_in']));
 			$dtr[$key]['afternoon_out'] = date("h:i:s A",strtotime($value['afternoon_out']));
 			unset($dtr[$key]['eid']);
-			unset($dtr[$key]['ddate']);
 			unset($dtr[$key]['tardiness']);
 			unset($dtr[$key]['pers_id']);
 		}
+
+		$manual_logs = $con->getData("SELECT id, log, allotment FROM manual_logs WHERE employee_id = ".$_POST['employee_id']." AND date = '".$_POST['date']."'");
+
+		foreach ($manual_logs as $manual_log) {
+		
+			$dtr[0][$manual_log['allotment']] = date("h:i:s A",strtotime($manual_log['log']));
+		
+		};
 		
 		$backlogs = $con->getData("SELECT log, machine FROM backlogs WHERE pers_id = '$pers_id' AND date = '$ddate'");
 		
 		foreach ($backlogs as $key => $value) {
 			$backlogs[$key]['log'] = date("h:i:s A",strtotime($backlogs[$key]['log']));
+			$backlogs[$key]['ddate'] = $ddate;
 			$backlogs[$key]['machine'] = getLocation($backlogs[$key]['machine']);
 			$backlogs[$key]['assignment'] = "";
 		}
 		
-		echo json_encode(array("dtr_specific"=>$dtr[0],"backlogs"=>$backlogs));
+		echo json_encode(array("dtr_specific"=>$dtr[0],"backlogs"=>$backlogs,"manual_logs"=>$manual_logs));
 	
 	break;
 	
@@ -258,14 +272,55 @@ switch ($_GET['r']) {
 	
 		$con = new pdo_db("dtr");
 
-		$_POST['morning_in'] = date("H:i:s",strtotime($_POST['morning_in']));
-		$_POST['morning_out'] = date("H:i:s",strtotime($_POST['morning_out']));
-		$_POST['afternoon_in'] = date("H:i:s",strtotime($_POST['afternoon_in']));
-		$_POST['afternoon_out'] = date("H:i:s",strtotime($_POST['afternoon_out']));
-		unset($_POST['edit']);
-		unset($_POST['pers_id']);
+		$_POST['dtr']['morning_in'] = date("H:i:s",strtotime($_POST['dtr']['morning_in']));
+		$_POST['dtr']['morning_out'] = date("H:i:s",strtotime($_POST['dtr']['morning_out']));
+		$_POST['dtr']['afternoon_in'] = date("H:i:s",strtotime($_POST['dtr']['afternoon_in']));
+		$_POST['dtr']['afternoon_out'] = date("H:i:s",strtotime($_POST['dtr']['afternoon_out']));
+		$ddate = $_POST['dtr']['ddate'];
+		unset($_POST['dtr']['edit']);
+		unset($_POST['dtr']['pers_id']);
+		unset($_POST['dtr']['ddate']);
+
+		$dtr = $con->updateData($_POST['dtr'],'id');
 		
-		$dtr = $con->updateData($_POST,'id');
+		# manual logs
+		$allotments = array("morning_in","morning_out","afternoon_in","afternoon_out");
+		$manual_logs = [];
+		foreach ($allotments as $allotment) {
+			if (isset($_POST['dtr'][$allotment])) {
+				if ($_POST['dtr'][$allotment] == "00:00:00") continue;
+				# skip if has backlog
+				$log = "$ddate ".date("H:i:s",strtotime($_POST['dtr'][$allotment]));
+				if (hasBacklog($con,$_POST['pers_id'],$log)) continue;
+				$manual_log = array(
+					"id"=>0,
+					"employee_id"=>$_POST['employee_id'],
+					"date"=>$ddate,
+					"log"=>$log,
+					"allotment"=>$allotment,
+					"system_log"=>"CURRENT_TIMESTAMP"
+				);
+				# if log has entry already then just update
+				if (count($_POST['manual_logs'])==0) {
+					$_POST['manual_logs'] = $con->getData("SELECT id, log, allotment FROM manual_logs WHERE employee_id = ".$_POST['employee_id']." AND date = '$ddate'");
+				};
+				foreach ($_POST['manual_logs'] as $ml) {
+					if ($ml['allotment'] == $allotment) $manual_log['id'] = $ml['id'];
+				};
+				$manual_logs[] = $manual_log;
+			};
+		};
+		$con->table = "manual_logs";
+		foreach ($manual_logs as $manual_log) {
+			
+			if ($manual_log['id']) {
+				$update = $con->updateData($manual_log,'id');
+			} else {
+				unset($manual_log['id']);
+				$insert = $con->insertData($manual_log);				
+			};
+			
+		};
 	
 	break;
 	
@@ -287,6 +342,32 @@ function empid($con,$id) {
 	$empid = $con->getData("SELECT empid FROM employees WHERE id = $id");
 	
 	return $empid[0]['empid'];
+	
+};
+
+function hasBacklog($con,$pers_id,$log) {
+	
+	$hasBacklog = false;
+	
+	$backlog = $con->getData("SELECT * FROM backlogs WHERE log = '$log' AND pers_id = '$pers_id'");
+	
+	if (count($backlog)) $hasBacklog = true;
+	
+	return $hasBacklog;
+	
+};
+
+function manualLogs($con,$analyzed,$employee_id,$date) {	
+	
+	$logs = $con->getData("SELECT id, log, allotment FROM manual_logs WHERE employee_id = $employee_id AND date = '$date'");
+	
+	foreach ($logs as $log) {
+		
+		$analyzed[$log['allotment']] = date("H:i:s",strtotime($log['log']));
+		
+	};
+
+	return $analyzed;
 	
 };
 

@@ -1,4 +1,4 @@
-ALTER TABLE `schedules`  ADD `flexible` INT(10) NOT NULL DEFAULT '0'  AFTER `description`;
+ALTER TABLE `backlogs` ADD INDEX(`pers_id`);
 
-backlogs
-flexible after machine
+schedules is_default after flexible
+

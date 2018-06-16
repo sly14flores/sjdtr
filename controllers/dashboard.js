@@ -57,6 +57,7 @@ app.factory('appService', function(consoleMsg,$http,$compile,$timeout,fileUpload
 				
 					if (scope.views.prefile == undefined) {
 						consoleMsg.show(400,'No file selected','a');
+						blockUI.hide();
 						return;
 					}
 					
@@ -73,10 +74,11 @@ app.factory('appService', function(consoleMsg,$http,$compile,$timeout,fileUpload
 						if (response.data[0] == 300) {
 							self.collectLogs(scope);
 						}
+						blockUI.hide();						
 						
 					}, function myError(response) {
 						 
-					  // error
+						blockUI.hide();
 						
 					});			
 					
@@ -88,6 +90,7 @@ app.factory('appService', function(consoleMsg,$http,$compile,$timeout,fileUpload
 						
 						if ((scope.views.pf == undefined) || (scope.views.pf == '')) {
 							consoleMsg.show(400,'No previously added file exists','a');
+							blockUI.hide();
 							return;
 						}
 						
@@ -106,11 +109,12 @@ app.factory('appService', function(consoleMsg,$http,$compile,$timeout,fileUpload
 							consoleMsg.show(response.data[0],response.data[1],response.data[2]);
 							if (response.data[0] == 300) {
 								self.collectLogs(scope);
-							}
+							};
+							blockUI.hide();
 							
 						}, function myError(response) {
 							 
-						  // error
+							blockUI.hide();
 							
 						});
 					
@@ -120,6 +124,7 @@ app.factory('appService', function(consoleMsg,$http,$compile,$timeout,fileUpload
 						var file = scope.views.logFile;				
 						if (file == undefined) {
 							consoleMsg.show(400,'No file selected','a');
+							blockUI.hide();
 							return;
 						}						
 						
@@ -147,6 +152,7 @@ app.factory('appService', function(consoleMsg,$http,$compile,$timeout,fileUpload
 				default:
 				
 					consoleMsg.show(300,"Please select in 'Select how to import'",'r');
+					blockUI.hide();
 				
 				break;
 				

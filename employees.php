@@ -156,7 +156,7 @@ require_once 'authentication.php';
 						<div>
 						<img src="{{views.profilePicture}}" class="img-responsive img-thumbnail profile-picture" alt="Profile Picture">
 						<div class="pull-right" style="text-align: right; margin-top: 120px; margin-right: 25px;">
-							<div style="font-size: 22px; border-bottom: 1px solid #d6d6d6; margin-bottom: 10px; padding-bottom: 3px;">{{views.employee}}</div>
+							<div style="font-size: 22px; border-bottom: 1px solid #d6d6d6; margin-bottom: 10px; padding-bottom: 3px;"><strong>{{views.employee}}</strong></div>
 							<div style="font-size: 20px; margin-bottom: 5px;">{{views.empid}}</div>
 							<div style="font-size: 16px;">{{views.position}}</div>
 						</div>
@@ -177,6 +177,8 @@ require_once 'authentication.php';
 						    <a href="#personal-info" data-toggle="tab">Personal Info</a>
 						  </li>
 						  <li><a href="#dtr" data-toggle="tab">Daily Time Record</a></li>
+						  <li><a href="#tos" data-toggle="tab">Travel Orders</a></li>
+						  <li><a href="#leaves" data-toggle="tab">Leaves</a></li>
 						</ul>
 
 						<br>
@@ -421,6 +423,10 @@ require_once 'authentication.php';
 									</tbody>
 								</table>
 							</div>
+							<div class="tab-pane" id="tos">
+							</div>
+							<div class="tab-pane" id="leaves">
+							</div>
 						</div>
 							
 						</div>
@@ -520,6 +526,8 @@ require_once 'authentication.php';
 <script src="modules/bootstrap-notify.js"></script>
 <script src="modules/account.js"></script>
 <script src="modules/dtr.js"></script>
+<script src="modules/tos.js"></script>
+<script src="modules/leaves.js"></script>
 
 <script src="jspdf/jspdf.min.js"></script>
 <script src="jspdf/jspdf.plugin.autotable.js"></script>

@@ -267,6 +267,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			scope.views.cancelCloseTxt = 'Close';		
 			
 			scope.generate.id = scope.employee_row.id;
+			scope.generate.pers_id = scope.employee_row.empid;
 			
 			$timeout(function() {			
 				scope.$apply(function() {
@@ -345,7 +346,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 		};
 		
 		self.dtr = function(scope,regen) {
-			console.log(scope);
+
 			if (scope.generate.month == null) {
 				scope.dtr = [];
 				return;
@@ -406,11 +407,11 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				};
 
 				function dtr(scope,dtr_row) {
-					
+
 					$http({
 					  method: 'POST',
 					  url: 'controllers/employees.php?r=manageDtr',
-					  data: {id: dtr_row.id}
+					  data: {employee_id: scope.generate.id, date: dtr_row.ddate, id: dtr_row.id}
 					}).then(function mySucces(response) {
 						
 						response.data['dtr_specific']['morning_in'] = new Date('2000-01-01 '+response.data['dtr_specific']['morning_in']);
@@ -420,6 +421,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 						
 						scope.dtr_specific = response.data['dtr_specific'];						
 						scope.backlogs = response.data['backlogs'];
+						scope.manual_logs = response.data['manual_logs'];
 						
 					}, function myError(response) {
 						 
@@ -436,7 +438,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 						$http({
 						  method: 'POST',
 						  url: 'controllers/employees.php?r=saveDtr',
-						  data: scope.dtr_specific
+						  data: {employee_id: scope.generate.id, pers_id: scope.generate.pers_id, dtr: scope.dtr_specific, manual_logs: scope.manual_logs}
 						}).then(function mySucces(response) {
 							
 							// self.dtr(scope,false);
@@ -454,7 +456,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				};
 				
 				this.assignLog = function(scope,blog) {
-					console.log(scope);
+
 					if (scope.$id > 2) scope = scope.$parent;
 				
 					scope.views.assignLog.alert = false;
@@ -481,7 +483,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 						scope.views.assignLog.alertMsg = blog.log+' was assigned as '+blog.assignment.split("_")[0]+' '+blog.assignment.split("_")[1];
 						$timeout(function() {
 							scope.$apply(function() {
-								dtr(scope,scope.dtr_specific);
+								dtr(scope,{id: scope.dtr_specific.id, ddate: blog.ddate});
 							});
 						},500);
 						
@@ -566,6 +568,7 @@ $scope.dtrReport = [];
 
 $scope.generate = {};
 $scope.generate.id = 0;
+$scope.generate.pers_id = '';
 $scope.generate.year = (new Date()).getFullYear();
 $scope.generate.regen = false;
 
