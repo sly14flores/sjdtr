@@ -367,7 +367,7 @@ require_once 'authentication.php';
 							<div class="tab-pane" id="dtr">
 								<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="appService.printDTR(this)" ng-disabled="generate.month == null"><i class="btn-icon-only icon-print"></i></a></div>
 								<div style="clear: both;"></div>
-								<form style="margin-top: 20px;"name="frmHolder.dtr" autocomplete="off">
+								<form style="margin-top: 20px;" name="frmHolder.dtr" autocomplete="off">
 									<fieldset>
 										<div class="row">
 											<!--<div class="span2">
@@ -424,6 +424,37 @@ require_once 'authentication.php';
 								</table>
 							</div>
 							<div class="tab-pane" id="tos">
+								<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="tos.to(this,null)"><i class="btn-icon-only icon-plus"></i></a></div>
+								<div style="clear: both;"></div>
+								<form style="margin-top: 20px;" autocomplete="off">
+									<fieldset>
+										<div class="row">
+											<div class="span1">
+												<div class="control-group">
+													<label><strong>Year:</strong></label>
+													<div class="controls">
+														<input type="text" class="span1" ng-model="filters.tos.year">
+													</div>
+												</div>
+											</div>
+											<div class="span2">
+												<div class="control-group">
+													<label><strong>Month:</strong></label>
+													<div class="controls">
+														<select class="span2" ng-model="filters.tos.month" ng-options="x for (x,y) in views.months track by y">
+															<option value="">-</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="span1">
+												<div class="control-group">											
+													<button class="btn btn-primary btn-xs" type="button" style="margin-top: 23px;" ng-click="tos.list(this)">Search</button>
+												</div>
+											</div>
+										</div>									
+									</fieldset>
+								</form>
 							</div>
 							<div class="tab-pane" id="leaves">
 							</div>
@@ -461,65 +492,20 @@ require_once 'authentication.php';
 </div>
 <!-- /footer --> 
 
-<div id="confirm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label-confirm">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-confirm">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="notify" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label-notify">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-notify">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="modal-show" class="modal fade" style="width: 850px; margin-left: -425px!important;" tabindex="-1" role="dialog" aria-labelledby="label-modal-show">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-modal-show">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
 <!-- Le javascript
 ================================================== --> 
 <!-- Placed at the end of the document so the pages load faster --> 
-<script src="angularjs/angular.min.js"></script>
-<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/jquery-migrate-3.0.0.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.blockUI.js"></script>
 <script src="js/bootstrap-notify-3.1.3/bootstrap-notify.min.js"></script>
+<script src="js/bootbox.min.js"></script>
 
+<script src="angularjs/1.6.4/angular.min.js"></script>
+<script src="angularjs/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<!-- <script src="angularjs/ui-bootstrap-tpls-1.3.3.min.js"></script> -->
 <script src="angularjs/utils/pagination/dirPagination.js"></script>
-<script src="angularjs/utils/ui-bootstrap-tpls-1.3.3.min.js"></script>
 
 <script src="modules/bootstrap-modal.js"></script>
 <script src="modules/block-ui.js"></script>

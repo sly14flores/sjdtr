@@ -6,7 +6,7 @@ angular.module('account',['bootstrap-modal']).directive('logout', function($wind
 		
 			element.bind('click', function() {
 					
-				bootstrapModal.confirm(scope,'Are you sure you want to logout?','logout()');
+				bootstrapModal.confirm(scope,'Confirmation','Are you sure you want to logout?',scope.logout,function() {});
 					
 			});
 

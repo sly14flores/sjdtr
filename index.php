@@ -225,64 +225,18 @@ require_once 'authentication.php';
   </div>
   <!-- /footer-inner --> 
 </div>
-<!-- /footer --> 
-
-<div id="confirm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label-confirm">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-confirm">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="notify" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label-notify">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-notify">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="modal-show" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label-modal-show">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-modal-show">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<!-- /footer -->
 
 <!-- Le javascript
 ================================================== --> 
 <!-- Placed at the end of the document so the pages load faster --> 
-<script src="angularjs/angular.min.js"></script>
 <script src="js/jquery-1.7.2.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.blockUI.js"></script>
 <script src="js/bootstrap-notify-3.1.3/bootstrap-notify.min.js"></script>
+<script src="js/bootbox.min.js"></script>
+
+<script src="angularjs/angular.min.js"></script>
 
 <script src="modules/bootstrap-modal.js"></script>
 <script src="modules/block-ui.js"></script>

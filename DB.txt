@@ -1,4 +1,67 @@
 ALTER TABLE `backlogs` ADD INDEX(`pers_id`);
 
 schedules is_default after flexible
+set flexi as default
 
+CREATE TABLE `travel_orders` (
+  `id` int(11) NOT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
+  `remarks` varchar(1000) DEFAULT NULL,
+  `system_log` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `travel_orders`
+--
+ALTER TABLE `travel_orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `employee_id` (`employee_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `travel_orders`
+--
+ALTER TABLE `travel_orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+CREATE TABLE `travel_orders_dates` (
+  `id` int(11) NOT NULL,
+  `to_id` int(11) DEFAULT NULL,
+  `to_date` date DEFAULT NULL,
+  `to_duration` varchar(20) DEFAULT NULL,
+  `system_log` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `travel_orders_dates`
+--
+ALTER TABLE `travel_orders_dates`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `to_id` (`to_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `travel_orders_dates`
+--
+ALTER TABLE `travel_orders_dates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `travel_orders_dates` ADD  FOREIGN KEY (`to_id`) REFERENCES `travel_orders`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
+
+ALTER TABLE `travel_orders` ADD  FOREIGN KEY (`employee_id`) REFERENCES `employees`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 16, 2018 at 01:32 PM
+-- Generation Time: Jun 17, 2018 at 08:24 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -35818,8 +35818,8 @@ CREATE TABLE `schedules` (
 --
 
 INSERT INTO `schedules` (`id`, `description`, `flexible`, `is_default`) VALUES
-(1, '8AM-5PM', 0, 1),
-(2, 'Flexi', 1, NULL),
+(1, '8AM-5PM', 0, NULL),
+(2, 'Flexi', 1, 1),
 (3, 'Utility', 0, NULL);
 
 -- --------------------------------------------------------
@@ -35904,7 +35904,8 @@ CREATE TABLE `travel_orders_dates` (
 -- Indexes for table `backlogs`
 --
 ALTER TABLE `backlogs`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pers_id` (`pers_id`);
 
 --
 -- Indexes for table `dtr`
@@ -36018,6 +36019,18 @@ ALTER TABLE `manual_logs`
 --
 ALTER TABLE `schedule_details`
   ADD CONSTRAINT `schedule_details_ibfk_1` FOREIGN KEY (`schedule_id`) REFERENCES `schedules` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `travel_orders`
+--
+ALTER TABLE `travel_orders`
+  ADD CONSTRAINT `travel_orders_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `travel_orders_dates`
+--
+ALTER TABLE `travel_orders_dates`
+  ADD CONSTRAINT `travel_orders_dates_ibfk_1` FOREIGN KEY (`to_id`) REFERENCES `travel_orders` (`id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

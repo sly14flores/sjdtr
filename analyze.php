@@ -38,9 +38,9 @@ class log_order {
 		if ($this->flexible) {
 			
 			if ($log['flexible']) { # Out
-				$allotment = array("morning_in"=>date("H:i:s",$tlog));
-			} else { # In
 				$allotment = array("afternoon_out"=>date("H:i:s",$tlog));
+			} else { # In
+				$allotment = array("morning_in"=>date("H:i:s",$tlog));
 			}			
 			
 		} else {

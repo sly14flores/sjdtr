@@ -1,4 +1,4 @@
-var app = angular.module('employees', ['angularUtils.directives.dirPagination','ui.bootstrap','block-ui','bootstrap-modal','bootstrap-notify','account','dtr-module']);
+var app = angular.module('employees', ['angularUtils.directives.dirPagination','ui.bootstrap','block-ui','bootstrap-modal','bootstrap-notify','account','dtr-module','tos-module']);
 
 app.directive('fileModel', ['$parse', function ($parse) {
 	return {
@@ -67,6 +67,20 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 	function appService() {
 		
 		var self = this;
+		
+		function validate(scope,form) {
+			
+			var controls = scope.frmHolder[form].$$controls;
+			
+			angular.forEach(controls,function(elem,i) {
+
+				if (elem.$$attr.$attr.required) elem.$touched = elem.$invalid;
+									
+			});
+
+			return scope.frmHolder[form].$invalid;
+			
+		};
 		
 		self.controls = function(scope,opt) {
 			
@@ -138,8 +152,6 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			scope.controls.personalInfo.delBtn = false;			
 		};
 		
-		self.required = ['empid', 'first_name', 'middle_name', 'last_name', 'schedule_id'];
-		
 		self.start = function(scope) {
 
 			$http({
@@ -208,12 +220,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 					scope.personalInfo.id = 0;
 					scope.views.profilePicture = "img/avatar.png";			
 					
-					angular.forEach(self.required, function(item, i) {
-						if ((scope.personalInfo[item] == '') || (scope.personalInfo[item] == undefined)) {
-							scope.frmHolder.personalInfo[item].$invalid = true;
-							scope.frmHolder.personalInfo[item].$touched = false;
-						}
-					});					
+					cancel(scope,'personalInfo');
 					
 				}, function myError(response) {
 					 
@@ -229,15 +236,24 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 		
 		};
 		
+		function cancel(scope,form) {
+			
+			var controls = scope.frmHolder[form].$$controls;
+			
+			angular.forEach(controls,function(elem,i) {
+				
+				if (elem.$$attr.$attr.required) elem.$touched = false;
+									
+			});			
+			
+		};
+		
 		self.update = function(scope) {
 
-			if (scope.frmHolder.personalInfo.$invalid) {
-				angular.forEach(self.required, function(item, i) {
-					scope.frmHolder.personalInfo[item].$touched = true;
-				});
+			if (validate(scope,'personalInfo')) {
 				bootstrapNotify.show('danger','Please fill up the required field(s)');
-				return;
-			}
+				return;				
+			};
 			
 			$http({
 			  method: 'POST',
@@ -306,15 +322,13 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 		
 		self.confirmDel = function(scope) {
 
-			bootstrapModal.confirm(scope,'Are you sure want to delete this record?','appService.del(this)');
+			bootstrapModal.confirm(scope,'Confirmation','Are you sure want to delete this record?',del,function() {});
 			
 		};
 		
-		self.del = function(scope) {
+		function del(scope) {
 		
-			self.onCancel(scope);		
-			
-			bootstrapModal.closeConfirm();
+			self.onCancel(scope);			
 			
 			$http({
 			  method: 'POST',
@@ -330,12 +344,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				scope.views.addUpdateTxt = 'Save';
 				scope.views.cancelCloseTxt = 'Cancel';
 				
-				angular.forEach(self.required, function(item, i) {
-					if ((scope.personalInfo[item] == '') || (scope.personalInfo[item] == undefined)) {
-						scope.frmHolder.personalInfo[item].$invalid = true;
-						scope.frmHolder.personalInfo[item].$touched = false;
-					}
-				});			
+				cancel(scope,'personalInfo');
 				
 			}, function myError(response) {
 				 
@@ -351,8 +360,6 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				scope.dtr = [];
 				return;
 			};
-			
-			if (regen) bootstrapModal.closeConfirm();
 			
 			blockUI.show();
 			
@@ -383,10 +390,17 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				bootstrapNotify.show('danger','Please select month');
 				return;
 			};
-			bootstrapModal.confirm(scope,'Are you sure want to regenerate DTR?','appService.dtr(this,true)');
+
+			bootstrapModal.confirm(scope,'Confirmation','Are you sure want to regenerate DTR?',regenDtr,function() {});
 
 		};
-		
+
+		function regenDtr(scope) {
+
+			self.dtr(scope,true);
+
+		};
+
 		self.manageDTR = function() {
 
 			return new function() {
@@ -400,7 +414,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 
 					scope.views.assignLog.alert = false;
 
-					bootstrapModal.show(scope,'Manage DTR - '+df.substring(0,16),'views/dtr.html',null,function() { self.dtr(scope,false); });
+					bootstrapModal.box2(scope,'Manage DTR - '+df.substring(0,16),'views/dtr.html',function() { self.dtr(scope,false); });
 
 					dtr(scope,dtr_row);
 
@@ -511,7 +525,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 	
 });
 
-app.controller('employeesCtrl', function($scope,$http,blockUI,bootstrapModal,bootstrapNotify,fileUpload,appService) {
+app.controller('employeesCtrl', function($scope,$http,blockUI,bootstrapModal,bootstrapNotify,fileUpload,appService,tos) {
 
 $scope.currentPage = 1;
 $scope.pageSize = 15;
@@ -627,4 +641,28 @@ $scope.uploadProfilePicture = function() {
 	
 };
 
+/*
+** pagination
+*/
+
+$scope.pagination = {};
+$scope.pagination.currentPage = {};
+$scope.buttons = {};
+$scope.filters = {};
+
+tos.data($scope);
+tos.list($scope);
+
+$scope.tos = tos;
+
+});
+
+app.filter('pagination', function() {
+	  return function(input, currentPage, pageSize) {
+	    if(angular.isArray(input)) {
+	      var start = (currentPage-1)*pageSize;
+	      var end = currentPage*pageSize;
+	      return input.slice(start, end);
+	    }
+	  };
 });

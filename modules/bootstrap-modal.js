@@ -1,65 +1,91 @@
 angular.module('bootstrap-modal',[]).service('bootstrapModal', function($compile,$timeout) {
 
-	this.confirm = function(scope,body,ok,shown = null,hidden = null) {
+	this.confirm = function(scope,title,content,onOk,onCancel) {
 		
-		$('#confirm').modal('show');
-		$('#confirm').on('shown.bs.modal', function (e) {
-		  // do something...
-		});
-		$('#confirm').on('hidden.bs.modal', function (e) {
-		  // do something...
-		});
-		$('#label-confirm').html('Confirmation');
-		$('#confirm .modal-body').html(body);
-		$compile($('#confirm .modal-body')[0])(scope);		
+		var dialog = bootbox.confirm({
+			title: title,
+			message: content,
+			callback: function (result) {
+				if (result) {
+					onOk(scope);
+				} else {
+					onCancel();
+				}
+			}
+		});		
+		
+	};
+	
+	this.notify = function(scope,content,onOk) {
 
-		var buttons = '<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>';
-			buttons += '<button type="button" class="btn btn-primary" ng-click="'+ok+'">Ok</button>';
-		$('#confirm .modal-footer').html(buttons);
-		$compile($('#confirm .modal-footer')[0])(scope);
-		
-	}
+		var dialog = bootbox.alert({
+			title: 'Notification',
+			message: content,
+			callback: function () {
+				onOk();
+			}
+		});		
 	
-	this.closeConfirm = function() {
-		$('#confirm').modal('hide');
-	}
+	};
 	
-	this.notify = function(body,shown = null,hidden = null) {
-		
-		$('#notify').modal('show');
-		$('#notify').on('shown.bs.modal', function (e) {
-		  // do something...
-		});
-		$('#notify').on('hidden.bs.modal', function (e) {
-		  // do something...
-		});
-		$('#label-notify').html('Notification');
-		$('#notify .modal-body').html(body);
+	this.box = function(scope,title,content,onOk) {
 
-		var buttons = '<button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>';
-		$('#notify .modal-footer').html(buttons);
-		
-	}
+		var dialog = bootbox.confirm({
+			title: title,
+			message: 'Loading content...',
+			buttons: {
+				confirm: {
+					label: 'Save',
+					className: 'btn-success'
+				},				
+				cancel: {
+					label: 'Cancel',
+					className: 'btn-danger'
+				}
+			},			
+			callback: function (result) {
+				if (result) {
+					return onOk(scope);
+				}
+			}
+		});
+
+		$timeout(function() { dialog.find('.bootbox-body').load(content, function() {
+			$compile($('.bootbox-body')[0])(scope);
+		}); }, 1000);
 	
-	this.show = function(scope,title,body,shown = null,hidden = null) {
-		
-		$('#modal-show').modal('show');
-		$('#modal-show').on('shown.bs.modal', function (e) {
-		  // do something...
+	};
+	
+	this.box2 = function(scope,title,content,onOk) {
+
+		var dialog = bootbox.alert({
+			title: title,
+			message: 'Loading...',
+			buttons: {			
+				ok: {
+					label: 'Close',
+					className: 'btn-default'
+				}
+			},			
+			callback: function (result) {
+
+				if (result) {				
+
+				} else {
+					return onOk(scope);					
+				};
+
+			}
 		});
-		$('#modal-show').on('hidden.bs.modal', function (e) {
-			if (hidden != null) hidden();
-		});
-		$('#label-modal-show').html(title);
-		$('#modal-show .modal-body').load(body,function() {
+
+		dialog.init(function() {
+			dialog.find('.bootbox-body').load(content);
+			$('.modal').css({"width": "60%","left": "40%"});
 			$timeout(function() {
-				$compile($('#modal-show .modal-body')[0])(scope);
-			},200);
+				$compile($('.bootbox-body')[0])(scope);
+			}, 500);
 		});
 
-		var buttons = '<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>';
-		$('#modal-show .modal-footer').html(buttons);		
-
-	}
+	};	
 
 });
