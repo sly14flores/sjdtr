@@ -314,6 +314,8 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				if (response.data['has_profile_pic']) scope.views.profilePicture = 'pictures/'+response.data['empid']+'.jpg';
 				else scope.views.profilePicture = "img/avatar.png";
 				
+				scope.t_os.list(scope);
+				
 			}, function myError(response) {
 				 
 			  // error
@@ -657,11 +659,11 @@ $scope.pagination = {};
 $scope.pagination.currentPage = {};
 $scope.buttons = {};
 $scope.filters = {};
+$scope.views.search = {};
 
 tos.data($scope);
-tos.list($scope);
 
-$scope.tos = tos;
+$scope.t_os = tos;
 
 });
 

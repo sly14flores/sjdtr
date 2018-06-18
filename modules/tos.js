@@ -4,13 +4,27 @@ angular.module('tos-module',['block-ui','bootstrap-modal','bootstrap-notify']).f
 
 		var self = this;
 
+		function validate(scope,form) {
+			
+			var controls = scope.frmHolder[form].$$controls;
+
+			angular.forEach(controls,function(elem,i) {
+				
+				if (elem.$$attr.$attr.required) scope.$apply(function() { elem.$touched = elem.$invalid; });
+									
+			});
+
+			return scope.frmHolder[form].$invalid;
+			
+		};		
+		
 		self.data = function(scope) {
 
 			scope.pagination.tos = {};
 			scope.pagination.currentPage.tos = 1;
 			
 			scope.to = {};
-			scope.to.id = {};
+			scope.to.id = 0;
 			scope.to.dates = {};
 			scope.to.dates.data = [];
 			scope.to.dates.dels = [];
@@ -28,14 +42,27 @@ angular.module('tos-module',['block-ui','bootstrap-modal','bootstrap-notify']).f
 			scope.pagination.tos.pageSize = 10;
 			scope.pagination.tos.maxSize = 3;
 			
+			$http({
+			  method: 'POST',
+			  url: 'handlers/travel-orders-list.php',
+			  data: {employee_id: scope.generate.id, filter: scope.filters.tos}
+			}).then(function mySucces(response) {
 
+				angular.copy(response.data, scope.tos);
+				scope.pagination.tos.filterData = scope.tos;
+
+			}, function myError(response) {
+				 
+			  // error
+				
+			});	
 			
 		};
 		
 		self.to = function(scope,row) {
 			
 			scope.to = {};
-			scope.to.id = {};
+			scope.to.id = 0;
 			scope.to.dates = {};
 			scope.to.dates.data = [];
 			scope.to.dates.dels = [];
@@ -43,7 +70,9 @@ angular.module('tos-module',['block-ui','bootstrap-modal','bootstrap-notify']).f
 			switch (row) {
 				
 				case null:
-
+					
+					scope.to.employee_id = scope.generate.id;
+					
 				break;
 				
 				default:
@@ -52,7 +81,93 @@ angular.module('tos-module',['block-ui','bootstrap-modal','bootstrap-notify']).f
 				
 			};
 			
-			bootstrapModal.box(scope,'Travel Order','views/to.html',function() { });
+			bootstrapModal.box(scope,'Travel Order','views/to.html',save);
+			
+		};
+		
+		function save(scope) {
+
+			if (validate(scope,'to')) return false;
+			
+			$http({
+			  method: 'POST',
+			  url: 'handlers/travel-order-save.php',
+			  data: scope.to
+			}).then(function mySucces(response) {
+
+				self.list(scope);
+				
+			}, function myError(response) {
+				 
+			  // error
+				
+			});
+			
+			return true;			
+			
+		};
+		
+		self.del = function(scope,row) {
+			
+			var onOk = function() {		
+				
+				$http({
+				  method: 'POST',
+				  url: 'handlers/travel-order-delete.php',
+				  data: {id: [row.id]}
+				}).then(function mySucces(response) {
+
+					self.list(scope);
+					
+				}, function myError(response) {
+					 
+				  // error
+					
+				});
+
+			};
+
+			bootstrapModal.confirm(scope,'Confirmation','Are you sure you want to delete this travel order?',onOk,function() {});
+
+		};
+		
+		self.to_dates = {
+			
+			add: function(scope) {
+				
+				scope.to.dates.data.push({id:0, to_date: new Date(), to_duration: "Wholeday", disabled: false});				
+				
+			},
+			
+			edit: function(scope,to_date) {
+
+				var index = scope.to.dates.data.indexOf(to_date);
+				scope.to.dates.data[index].disabled = !scope.to.dates.data[index].disabled;
+				
+			},
+			
+			del: function(scope,to_date) {
+
+				if (to_date.id > 0) {
+					scope.to.dates.dels.push(to_date.id);
+				};
+
+				var to_dates = scope.to.dates.data;
+				var index = scope.to.dates.data.indexOf(to_date);
+				scope.to.dates.data = [];
+
+				angular.forEach(to_dates, function(d,i) {
+					
+					if (index != i) {
+						
+						delete d['$$hashKey'];
+						scope.to.dates.data.push(d);
+						
+					};
+					
+				});		
+
+			}
 			
 		};
 		

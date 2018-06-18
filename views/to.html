@@ -1,0 +1,38 @@
+<form name="frmHolder.to" autocomplete="off">
+	<fieldset>
+		<div class="row">
+			<div class="span2">
+				<div class="control-group" ng-class="{'error': frmHolder.to.description.$invalid && frmHolder.to.description.$touched}">
+					<label><strong>Description</strong></label>
+					<div class="controls">
+						<input type="text" class="span2" name="description" ng-model="to.description" required>
+					</div>
+				</div>
+			</div>
+			<div class="span2">
+				<div class="control-group">
+					<label><strong>Remarks</strong></label>
+					<div class="controls">
+						<input type="text" class="span2" name="remarks" ng-model="to.remarks">
+					</div>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+</form>
+<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="t_os.to_dates.add(this)"><i class="btn-icon-only icon-plus"></i></a></div>
+<div style="clear: both;"></div>
+<table class="table table-bordered" style="margin-top: 15px;">
+	<thead>
+		<tr><th>#</th><th>Date</th><th>Duration</th><th></th></tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="to_date in to.dates.data">
+			<td>{{$index+1}}</td><td><input type="date" class="form-control" ng-model="to_date.to_date" style="width: 150px;" ng-disabled="to_date.disabled"></td><td><select class="form-control" ng-model="to_date.to_duration" style="width: 100px;" ng-disabled="to_date.disabled"><option value="Wholeday">Wholeday</option><option value="AM">AM</option><option value="PM">PM</option></select></td>
+			<td>
+				<a href="javascript:;" class="btn btn-small btn-success" ng-click="t_os.to_dates.edit(this,to_date)"><i class="btn-icon-only" ng-class="{'icon-edit': to_date.disabled, 'icon-save': !to_date.disabled}"></i></a>
+				<a href="javascript:;" class="btn btn-danger btn-small" ng-click="t_os.to_dates.del(this,to_date)"><i class="btn-icon-only icon-remove"></i></a>
+			</td>
+		</tr>
+	</tbody>
+</table>

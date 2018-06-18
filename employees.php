@@ -424,7 +424,7 @@ require_once 'authentication.php';
 								</table>
 							</div>
 							<div class="tab-pane" id="tos">
-								<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="tos.to(this,null)"><i class="btn-icon-only icon-plus"></i></a></div>
+								<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="t_os.to(this,null)" ng-disabled="generate.id == 0"><i class="btn-icon-only icon-plus"></i></a></div>
 								<div style="clear: both;"></div>
 								<form style="margin-top: 20px;" autocomplete="off">
 									<fieldset>
@@ -449,12 +449,37 @@ require_once 'authentication.php';
 											</div>
 											<div class="span1">
 												<div class="control-group">											
-													<button class="btn btn-primary btn-xs" type="button" style="margin-top: 23px;" ng-click="tos.list(this)" ng-disabled="generate.id == 0">Search</button>
+													<button class="btn btn-primary btn-xs" type="button" style="margin-top: 23px;" ng-click="t_os.list(this)" ng-disabled="generate.id == 0">Filter</button>
 												</div>
-											</div>
+											</div>											
 										</div>									
 									</fieldset>
 								</form>
+								<div class="controls pull-right" style="margin: 10px 0 10px 10px;">
+									<strong>Search:&nbsp;</strong><input type="text" class="span3" ng-model="views.search.tos" ng-disabled="generate.id == 0">
+								</div>								
+								<table id="tab-tos" class="table table-bordered">
+									<thead>
+										<tr><th>Description</th><th>From</th><th>To</th><th>Remarks</th><th></th></tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="to_row in pagination.tos.filterData = (tos | filter: views.search.tos) | pagination: pagination.tos.currentPage:pagination.tos.pageSize">
+											<td>{{to_row.description}}</td><td>{{to_row.from}}</td><td>{{to_row.to}}</td><td>{{to_row.remarks}}</td>
+											<td style="text-align: center;">
+												<a href="javascript:;" class="btn btn-small btn-success" ng-click="t_os.to(this,null)"><i class="btn-icon-only icon-edit"></i></a>
+												<a href="javascript:;" class="btn btn-danger btn-small" ng-click="t_os.del(this,to_row)"><i class="btn-icon-only icon-remove"></i></a>
+											</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="5" style="text-align: center;">
+												<div class="pull-right"><ul uib-pagination boundary-links="true" total-items="pagination.tos.filterData.length" max-size="pagination.tos.maxSize" items-per-page="pagination.tos.pageSize" ng-model="pagination.tos.currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul></div>
+												<div class="clearfix"></div>
+											</td>
+										</tr>									
+									</tfoot>
+								</table>								
 							</div>
 							<div class="tab-pane" id="leaves">
 							</div>
