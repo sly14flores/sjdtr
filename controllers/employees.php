@@ -71,6 +71,10 @@ switch ($_GET['r']) {
 		unset($employee[0]['description']);
 		$employee[0]['has_profile_pic'] = file_exists($picture);
 		
+		$employee[0]['first_name'] = ($employee[0]['first_name'] == null)?"":$employee[0]['first_name'];
+		$employee[0]['middle_name'] = ($employee[0]['middle_name'] == null)?"":$employee[0]['middle_name'];
+		$employee[0]['last_name'] = ($employee[0]['last_name'] == null)?"":$employee[0]['last_name'];
+		
 		echo json_encode($employee[0]);
 	
 	break;

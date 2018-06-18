@@ -193,6 +193,14 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			}).then(function mySucces(response) {
 			
 				scope.personalInfo.id = response.data;
+				scope.employee_row = {
+					id: response.data,
+					empid: '',
+					full_name: ''
+				};
+				$timeout(function() {
+					self.view(scope);
+				},200);
 				
 			}, function myError(response) {
 				 

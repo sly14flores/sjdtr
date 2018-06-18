@@ -433,7 +433,7 @@ require_once 'authentication.php';
 												<div class="control-group">
 													<label><strong>Year:</strong></label>
 													<div class="controls">
-														<input type="text" class="span1" ng-model="filters.tos.year">
+														<input type="text" class="span1" ng-model="filters.tos.year" ng-disabled="generate.id == 0">
 													</div>
 												</div>
 											</div>
@@ -441,7 +441,7 @@ require_once 'authentication.php';
 												<div class="control-group">
 													<label><strong>Month:</strong></label>
 													<div class="controls">
-														<select class="span2" ng-model="filters.tos.month" ng-options="x for (x,y) in views.months track by y">
+														<select class="span2" ng-model="filters.tos.month" ng-options="x for (x,y) in views.months track by y" ng-disabled="generate.id == 0">
 															<option value="">-</option>
 														</select>
 													</div>
@@ -449,7 +449,7 @@ require_once 'authentication.php';
 											</div>
 											<div class="span1">
 												<div class="control-group">											
-													<button class="btn btn-primary btn-xs" type="button" style="margin-top: 23px;" ng-click="tos.list(this)">Search</button>
+													<button class="btn btn-primary btn-xs" type="button" style="margin-top: 23px;" ng-click="tos.list(this)" ng-disabled="generate.id == 0">Search</button>
 												</div>
 											</div>
 										</div>									
