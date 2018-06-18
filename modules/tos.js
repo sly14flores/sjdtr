@@ -59,23 +59,42 @@ angular.module('tos-module',['block-ui','bootstrap-modal','bootstrap-notify']).f
 			
 		};
 		
-		self.to = function(scope,row) {
-			
-			scope.to = {};
-			scope.to.id = 0;
-			scope.to.dates = {};
-			scope.to.dates.data = [];
-			scope.to.dates.dels = [];
+		self.to = function(scope,row) {			
 			
 			switch (row) {
 				
 				case null:
+					
+					scope.to = {};
+					scope.to.id = 0;
+					scope.to.dates = {};
+					scope.to.dates.data = [];
+					scope.to.dates.dels = [];					
 					
 					scope.to.employee_id = scope.generate.id;
 					
 				break;
 				
 				default:
+				
+					$http({
+					  method: 'POST',
+					  url: 'handlers/travel-order-view.php',
+					  data: {id: row.id}
+					}).then(function mySucces(response) {
+
+						scope.to = angular.copy(response.data);
+						angular.forEach(scope.to.dates.data, function(item,i) {
+							
+							scope.to.dates.data[i].to_date = new Date(item.to_date);
+							
+						});
+						
+					}, function myError(response) {
+						 
+					  // error
+						
+					});					
 				
 				break;
 				

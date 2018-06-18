@@ -26,8 +26,8 @@ foreach ($travel_orders as $key => $travel_order) {
 	
 	if (count($travel_order_dates)) {
 		
-		$travel_orders[$key]['from'] = date("F j, Y",strtotime($travel_order_dates[0]['to_date']));
-		$travel_orders[$key]['to'] = date("F j, Y",strtotime($travel_order_dates[count($travel_order_dates)-1]['to_date']));
+		$travel_orders[$key]['from'] = date("F j, Y",strtotime($travel_order_dates[0]['to_date']))." (".$travel_order_dates[0]['to_duration'].")";
+		$travel_orders[$key]['to'] = date("F j, Y",strtotime($travel_order_dates[count($travel_order_dates)-1]['to_date']))." (".$travel_order_dates[count($travel_order_dates)-1]['to_duration'].")";
 		
 	};
 	

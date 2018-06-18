@@ -466,7 +466,7 @@ require_once 'authentication.php';
 										<tr ng-repeat="to_row in pagination.tos.filterData = (tos | filter: views.search.tos) | pagination: pagination.tos.currentPage:pagination.tos.pageSize">
 											<td>{{to_row.description}}</td><td>{{to_row.from}}</td><td>{{to_row.to}}</td><td>{{to_row.remarks}}</td>
 											<td style="text-align: center;">
-												<a href="javascript:;" class="btn btn-small btn-success" ng-click="t_os.to(this,null)"><i class="btn-icon-only icon-edit"></i></a>
+												<a href="javascript:;" class="btn btn-small btn-success" ng-click="t_os.to(this,to_row)"><i class="btn-icon-only icon-edit"></i></a>
 												<a href="javascript:;" class="btn btn-danger btn-small" ng-click="t_os.del(this,to_row)"><i class="btn-icon-only icon-remove"></i></a>
 											</td>
 										</tr>
