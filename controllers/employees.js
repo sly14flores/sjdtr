@@ -1,4 +1,4 @@
-var app = angular.module('employees', ['angularUtils.directives.dirPagination','ui.bootstrap','block-ui','bootstrap-modal','bootstrap-notify','account','dtr-module','tos-module']);
+var app = angular.module('employees', ['angularUtils.directives.dirPagination','ui.bootstrap','block-ui','bootstrap-modal','bootstrap-notify','account','dtr-module','tos-module','leaves-module']);
 
 app.directive('fileModel', ['$parse', function ($parse) {
 	return {
@@ -315,6 +315,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				else scope.views.profilePicture = "img/avatar.png";
 				
 				scope.t_os.list(scope);
+				scope.e_leaves.list(scope);
 				
 			}, function myError(response) {
 				 
@@ -535,7 +536,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 	
 });
 
-app.controller('employeesCtrl', function($scope,$http,blockUI,bootstrapModal,bootstrapNotify,fileUpload,appService,tos) {
+app.controller('employeesCtrl', function($scope,$http,blockUI,bootstrapModal,bootstrapNotify,fileUpload,appService,tos,leaves) {
 
 $scope.currentPage = 1;
 $scope.pageSize = 15;
@@ -662,8 +663,10 @@ $scope.filters = {};
 $scope.views.search = {};
 
 tos.data($scope);
+leaves.data($scope);
 
 $scope.t_os = tos;
+$scope.e_leaves = leaves;
 
 });
 

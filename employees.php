@@ -482,6 +482,62 @@ require_once 'authentication.php';
 								</table>								
 							</div>
 							<div class="tab-pane" id="leaves">
+								<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="e_leaves.leave(this,null)" ng-disabled="generate.id == 0"><i class="btn-icon-only icon-plus"></i></a></div>
+								<div style="clear: both;"></div>
+								<form style="margin-top: 20px;" autocomplete="off">
+									<fieldset>
+										<div class="row">
+											<div class="span1">
+												<div class="control-group">
+													<label><strong>Year:</strong></label>
+													<div class="controls">
+														<input type="text" class="span1" ng-model="filters.leaves.year" ng-disabled="generate.id == 0">
+													</div>
+												</div>
+											</div>
+											<div class="span2">
+												<div class="control-group">
+													<label><strong>Month:</strong></label>
+													<div class="controls">
+														<select class="span2" ng-model="filters.leaves.month" ng-options="x for (x,y) in views.months track by y" ng-disabled="generate.id == 0">
+															<option value="">-</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="span1">
+												<div class="control-group">											
+													<button class="btn btn-primary btn-xs" type="button" style="margin-top: 23px;" ng-click="e_leaves.list(this)" ng-disabled="generate.id == 0">Filter</button>
+												</div>
+											</div>											
+										</div>									
+									</fieldset>
+								</form>
+								<div class="controls pull-right" style="margin: 10px 0 10px 10px;">
+									<strong>Search:&nbsp;</strong><input type="text" class="span3" ng-model="views.search.leaves" ng-disabled="generate.id == 0">
+								</div>
+								<table id="tab-leaves" class="table table-bordered">
+									<thead>
+										<tr><th>Type</th><th>From</th><th>To</th><th>Remarks</th><th></th></tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="leave_row in pagination.leaves.filterData = (leaves | filter: views.search.leaves) | pagination: pagination.leaves.currentPage:pagination.leaves.pageSize">
+											<td>{{leave_row.leave_type}}</td><td>{{leave_row.from}}</td><td>{{leave_row.to}}</td><td>{{leave_row.remarks}}</td>
+											<td style="text-align: center;">
+												<a href="javascript:;" class="btn btn-small btn-success" ng-click="e_leaves.leave(this,leave_row)"><i class="btn-icon-only icon-edit"></i></a>
+												<a href="javascript:;" class="btn btn-danger btn-small" ng-click="e_leaves.del(this,leave_row)"><i class="btn-icon-only icon-remove"></i></a>
+											</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="5" style="text-align: center;">
+												<div class="pull-right"><ul uib-pagination boundary-links="true" total-items="pagination.tos.filterData.length" max-size="pagination.tos.maxSize" items-per-page="pagination.tos.pageSize" ng-model="pagination.tos.currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul></div>
+												<div class="clearfix"></div>
+											</td>
+										</tr>									
+									</tfoot>
+								</table>
 							</div>
 						</div>
 							
@@ -529,7 +585,6 @@ require_once 'authentication.php';
 
 <script src="angularjs/1.6.4/angular.min.js"></script>
 <script src="angularjs/ui-bootstrap-tpls-2.5.0.min.js"></script>
-<!-- <script src="angularjs/ui-bootstrap-tpls-1.3.3.min.js"></script> -->
 <script src="angularjs/utils/pagination/dirPagination.js"></script>
 
 <script src="modules/bootstrap-modal.js"></script>

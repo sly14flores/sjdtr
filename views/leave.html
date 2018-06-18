@@ -1,0 +1,38 @@
+<form name="frmHolder.leave" autocomplete="off">
+	<fieldset>
+		<div class="row">
+			<div class="span2">
+				<div class="control-group" ng-class="{'error': frmHolder.leave.leave_type.$invalid && frmHolder.leave.leave_type.$touched}">
+					<label><strong>Type</strong></label>
+					<div class="controls">
+						<select class="span2" name="leave_type" ng-model="leave.leave_type" ng-options="l.description for l in leave_types track by l.id" required></select>
+					</div>
+				</div>
+			</div>
+			<div class="span2">
+				<div class="control-group">
+					<label><strong>Remarks</strong></label>
+					<div class="controls">
+						<input type="text" class="span2" name="remarks" ng-model="leave.remarks">
+					</div>
+				</div>
+			</div>
+		</div>
+	</fieldset>
+</form>
+<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="e_leaves.leave_dates.add(this)"><i class="btn-icon-only icon-plus"></i></a></div>
+<div style="clear: both;"></div>
+<table class="table table-bordered" style="margin-top: 15px;">
+	<thead>
+		<tr><th>#</th><th>Date</th><th>Duration</th><th></th></tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="leave_date in leave.dates.data">
+			<td>{{$index+1}}</td><td><input type="date" class="form-control" ng-model="leave_date.leave_date" style="width: 150px;" ng-disabled="leave_date.disabled"></td><td><select class="form-control" ng-model="leave_date.leave_duration" style="width: 100px;" ng-disabled="leave_date.disabled"><option value="Wholeday">Wholeday</option><option value="AM">AM</option><option value="PM">PM</option></select></td>
+			<td>
+				<a href="javascript:;" class="btn btn-small btn-success" ng-click="e_leaves.leave_dates.edit(this,leave_date)"><i class="btn-icon-only" ng-class="{'icon-edit': leave_date.disabled, 'icon-save': !leave_date.disabled}"></i></a>
+				<a href="javascript:;" class="btn btn-danger btn-small" ng-click="e_leaves.leave_dates.del(this,leave_date)"><i class="btn-icon-only icon-remove"></i></a>
+			</td>
+		</tr>
+	</tbody>
+</table>

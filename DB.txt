@@ -65,3 +65,77 @@ ALTER TABLE `travel_orders_dates`
 ALTER TABLE `travel_orders_dates` ADD  FOREIGN KEY (`to_id`) REFERENCES `travel_orders`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 ALTER TABLE `travel_orders` ADD  FOREIGN KEY (`employee_id`) REFERENCES `employees`(`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
+
+
+
+
+
+CREATE TABLE `leaves` (
+  `id` int(11) NOT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  `leave_type` varchar(1000) DEFAULT NULL,
+  `remarks` varchar(1000) DEFAULT NULL,
+  `system_log` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leaves_dates`
+--
+
+CREATE TABLE `leaves_dates` (
+  `id` int(11) NOT NULL,
+  `leave_id` int(11) DEFAULT NULL,
+  `leave_date` date DEFAULT NULL,
+  `leave_duration` varchar(20) DEFAULT NULL,
+  `system_log` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `leaves`
+--
+ALTER TABLE `leaves`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `employee_id` (`employee_id`);
+
+--
+-- Indexes for table `leaves_dates`
+--
+ALTER TABLE `leaves_dates`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `leave_id` (`leave_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `leaves`
+--
+ALTER TABLE `leaves`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `leaves_dates`
+--
+ALTER TABLE `leaves_dates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `leaves`
+--
+ALTER TABLE `leaves`
+  ADD CONSTRAINT `leaves_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `leaves_dates`
+--
+ALTER TABLE `leaves_dates`
+  ADD CONSTRAINT `leaves_dates_ibfk_1` FOREIGN KEY (`leave_id`) REFERENCES `leaves` (`id`) ON DELETE CASCADE;
