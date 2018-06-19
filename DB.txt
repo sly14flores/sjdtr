@@ -147,3 +147,6 @@ afternoon_grace_period
 
 ALTER TABLE `dtr` CHANGE `tardiness` `tardiness` VARCHAR(10) NULL DEFAULT NULL;
 ALTER TABLE `dtr` CHANGE `undertime` `undertime` VARCHAR(10) NULL DEFAULT NULL;
+
+ALTER TABLE `schedule_details` CHANGE `morning_grace_period` `morning_grace_period` INT(11) NOT NULL DEFAULT '0';
+ALTER TABLE `schedule_details` CHANGE `afternoon_grace_period` `afternoon_grace_period` INT(11) NOT NULL DEFAULT '0';

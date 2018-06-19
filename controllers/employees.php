@@ -123,15 +123,21 @@ switch ($_GET['r']) {
 				# manual logs
 				$analyzed = manualLogs($con,$analyzed,$_POST['id'],$start);
 				
-				$dtr[] = array("ddate"=>date("Y-m-d",strtotime($start)),
-						"eid"=>$_POST['id'],
-						"morning_in"=>$analyzed['morning_in'],
-						"morning_out"=>$analyzed['morning_out'],
-						"afternoon_in"=>$analyzed['afternoon_in'],
-						"afternoon_out"=>$analyzed['afternoon_out'],
-						"tardiness"=>"00:00:00",
-						"undertime"=>"00:00:00"
-						);
+				$row = array(
+					"ddate"=>date("Y-m-d",strtotime($start)),
+					"eid"=>$_POST['id'],
+					"morning_in"=>$analyzed['morning_in'],
+					"morning_out"=>$analyzed['morning_out'],
+					"afternoon_in"=>$analyzed['afternoon_in'],
+					"afternoon_out"=>$analyzed['afternoon_out'],
+					"tardiness"=>"",
+					"undertime"=>""
+				);
+				
+				# tardiness / undertime
+				$row = $analyze->tardiness_undertime($row);
+				
+				$dtr[] = $row;
 				
 				$start = date("Y-m-d", strtotime("+1 day", strtotime($start)));	
 				
@@ -157,10 +163,7 @@ switch ($_GET['r']) {
 					"morning_out"=>"00:00:00",
 					"afternoon_in"=>"00:00:00",
 					"afternoon_out"=>"00:00:00"
-				);
-
-				# manual logs
-				$analyzed = manualLogs($con,$analyzed,$_POST['id'],$d['ddate']);				
+				);			
 				
 				foreach ($logs as $log) {
 					$allotment = $analyze->allot($d['ddate'],array("log"=>$log['log'],"flexible"=>$log['flexible']));
@@ -168,10 +171,18 @@ switch ($_GET['r']) {
 					$analyzed[$prop[0]] = $allotment[$prop[0]];
 				};					
 				
+				# manual logs
+				$analyzed = manualLogs($con,$analyzed,$_POST['id'],$d['ddate']);				
+				
 				$_dtr[$key]['morning_in'] = $analyzed['morning_in'];
 				$_dtr[$key]['morning_out'] = $analyzed['morning_out'];
 				$_dtr[$key]['afternoon_in'] = $analyzed['afternoon_in'];
 				$_dtr[$key]['afternoon_out'] = $analyzed['afternoon_out'];
+				$_dtr[$key]['tardiness'] = "";
+				$_dtr[$key]['undertime'] = "";
+
+				$_dtr[$key] = $analyze->tardiness_undertime($_dtr[$key]);
+
 				unset($_dtr[$key]['eid']);
 				unset($_dtr[$key]['ddate']);
 				
@@ -192,8 +203,8 @@ switch ($_GET['r']) {
 			$dtr[$key]['morning_out'] = ($value['morning_out']=="00:00:00")?"":date("H:i:s",strtotime($value['morning_out']));
 			$dtr[$key]['afternoon_in'] = ($value['afternoon_in']=="00:00:00")?"":date("H:i:s",strtotime($value['afternoon_in']));
 			$dtr[$key]['afternoon_out'] = ($value['afternoon_out']=="00:00:00")?"":date("H:i:s",strtotime($value['afternoon_out']));
-			$dtr[$key]['tardiness'] = ($value['tardiness'] == "00:00:00")?"":$value['tardiness'];
-			$dtr[$key]['undertime'] = ($value['undertime'] == "00:00:00")?"":$value['undertime'];
+			$dtr[$key]['tardiness'] = $value['tardiness'];
+			$dtr[$key]['undertime'] = $value['undertime'];
 			
 			unset($dtr[$key]['eid']);
 			
@@ -217,8 +228,8 @@ switch ($_GET['r']) {
 				"morning_out"=>($value['morning_out']=="00:00:00")?"-":$value['morning_out'],
 				"afternoon_in"=>($value['afternoon_in']=="00:00:00")?"-":$value['afternoon_in'],
 				"afternoon_out"=>($value['afternoon_out']=="00:00:00")?"-":$value['afternoon_out'],
-				"tardiness"=>"",
-				"undertime"=>""
+				"tardiness"=>($value['tardiness']==null)?"":$value['tardiness'],
+				"undertime"=>($value['undertime']==null)?"":$value['undertime']
 			);
 					
 			# travel order

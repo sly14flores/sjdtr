@@ -31,8 +31,8 @@ class log_order {
 		
 		$morning_cutoff = strtotime("$date ".$this->schedules[date("l",strtotime($date))]['morning_cutoff']);
 		$lunch_cutoff = strtotime("$date ".$this->schedules[date("l",strtotime($date))]['lunch_break_cutoff']);
-		$afternoon_cutoff = strtotime("$date ".$this->schedules[date("l",strtotime($date))]['afternoon_cutoff']);
-
+		$afternoon_cutoff = strtotime("$date ".$this->schedules[date("l",strtotime($date))]['afternoon_cutoff']);		
+		
 		$tlog = strtotime($log['log']);
 
 		if ($this->flexible) {
@@ -57,11 +57,34 @@ class log_order {
 
 	}
 	
-	function tardiness() {
+	function tardiness_undertime($row) {
 		
-	}
-	
-	function undertime() {
+		$morning_tardiness_cutoff = $row['ddate']." ".$this->schedules[date("l",strtotime($row['ddate']))]['morning_in'];
+		$morning_undertime_cutoff = $row['ddate']." ".$this->schedules[date("l",strtotime($row['ddate']))]['morning_out'];
+		$afternoon_tardiness_cutoff = $row['ddate']." ".$this->schedules[date("l",strtotime($row['ddate']))]['afternoon_in'];
+		$afternoon_undertime_cutoff = $row['ddate']." ".$this->schedules[date("l",strtotime($row['ddate']))]['afternoon_out'];
+		
+		$morning_tardiness_cutoff = date("Y-m-d H:i:s",strtotime("+".$this->schedules[date("l",strtotime($row['ddate']))]['morning_grace_period']." Minutes",strtotime($morning_tardiness_cutoff)));
+		$afternoon_tardiness_cutoff = date("Y-m-d H:i:s",strtotime("+".$this->schedules[date("l",strtotime($row['ddate']))]['afternoon_grace_period']." Minutes",strtotime($afternoon_tardiness_cutoff)));
+		
+		$morning_in = $row['ddate']." ".$row['morning_in'];
+		$morning_out = $row['ddate']." ".$row['morning_out'];
+		$afternoon_in = $row['ddate']." ".$row['afternoon_in'];
+		$afternoon_out = $row['ddate']." ".$row['afternoon_out'];
+		
+		$morning_tardiness = (strtotime($morning_in)>strtotime($morning_tardiness_cutoff))?(strtotime($morning_in)-strtotime($morning_tardiness_cutoff)):0;
+		$afternoon_tardiness = (strtotime($afternoon_in)>strtotime($afternoon_tardiness_cutoff))?(strtotime($afternoon_in)-strtotime($afternoon_tardiness_cutoff)):0;
+		
+		$morning_undertime = (strtotime($morning_out)<strtotime($morning_undertime_cutoff))?(strtotime($morning_undertime_cutoff)-strtotime($morning_out)):0;
+		$afternoon_undertime = (strtotime($afternoon_out)<strtotime($afternoon_undertime_cutoff))?(strtotime($afternoon_undertime_cutoff)-strtotime($afternoon_out)):0;
+		
+		$tardiness = $morning_tardiness;
+		$undertime = $morning_undertime;
+		
+		$row['tardiness'] = $tardiness;
+		$row['undertime'] = $undertime;
+		
+		return $row;
 		
 	}
 
