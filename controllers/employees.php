@@ -89,6 +89,7 @@ switch ($_GET['r']) {
 		$con = new pdo_db("dtr");
 		$datef = $_POST['year']."-".$_POST['month'];
 		$travel_orders = new travel_orders($con,$_POST['id'],$datef);
+		$leaves = new leaves($con,$_POST['id'],$datef);
 		$dtr = $con->getData("SELECT * FROM dtr WHERE eid = $_POST[id] AND ddate LIKE '$datef%'");
 		
 		$date = $_POST['year']."-".$_POST['month']."-01";
@@ -187,10 +188,12 @@ switch ($_GET['r']) {
 			
 			$dtr[$key]['sdate'] = date("j",strtotime($value['ddate']));
 			$dtr[$key]['day'] = date("l",strtotime($value['ddate']));
-			$dtr[$key]['morning_in'] = date("H:i:s",strtotime($value['morning_in']));
-			$dtr[$key]['morning_out'] = date("H:i:s",strtotime($value['morning_out']));
-			$dtr[$key]['afternoon_in'] = date("H:i:s",strtotime($value['afternoon_in']));
-			$dtr[$key]['afternoon_out'] = date("H:i:s",strtotime($value['afternoon_out']));
+			$dtr[$key]['morning_in'] = ($value['morning_in']=="00:00:00")?"":date("H:i:s",strtotime($value['morning_in']));
+			$dtr[$key]['morning_out'] = ($value['morning_out']=="00:00:00")?"":date("H:i:s",strtotime($value['morning_out']));
+			$dtr[$key]['afternoon_in'] = ($value['afternoon_in']=="00:00:00")?"":date("H:i:s",strtotime($value['afternoon_in']));
+			$dtr[$key]['afternoon_out'] = ($value['afternoon_out']=="00:00:00")?"":date("H:i:s",strtotime($value['afternoon_out']));
+			$dtr[$key]['tardiness'] = ($value['tardiness'] == "00:00:00")?"":$value['tardiness'];
+			$dtr[$key]['undertime'] = ($value['undertime'] == "00:00:00")?"":$value['undertime'];
 			
 			unset($dtr[$key]['eid']);
 			
@@ -199,6 +202,8 @@ switch ($_GET['r']) {
 			$dtr[$key] = $travel_orders->travel_order($dtr[$key],$travel_order);
 			
 			# check leave
+			$leave = $leaves->getLeave($value['ddate']);
+			$dtr[$key] = $leaves->leave($dtr[$key],$leave);			
 			
 		};
 		
@@ -212,12 +217,17 @@ switch ($_GET['r']) {
 				"morning_out"=>($value['morning_out']=="00:00:00")?"-":$value['morning_out'],
 				"afternoon_in"=>($value['afternoon_in']=="00:00:00")?"-":$value['afternoon_in'],
 				"afternoon_out"=>($value['afternoon_out']=="00:00:00")?"-":$value['afternoon_out'],
-				"tardiness"=>"00:00:00",
-				"undertime"=>"00:00:00"
+				"tardiness"=>"",
+				"undertime"=>""
 			);
 					
+			# travel order
 			$travel_order = $travel_orders->getTo($value['ddate']);
 			$rpt = $travel_orders->travel_order($rpt,$travel_order);
+			
+			# leave
+			$leave = $leaves->getLeave($value['ddate']);
+			$dtr[$key] = $leaves->leave($dtr[$key],$leave);				
 			
 			$report[] = $rpt;
 			

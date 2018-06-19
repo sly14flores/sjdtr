@@ -162,20 +162,22 @@ angular.module('dtr-module',[]).service('dtr',function() {
 			// In Charge
 			doc.setFontSize(10);
 			doc.myText("In Charge",{align: "center"},306,755);
-			doc.myText("In Charge",{align: "center"},306,755,true);
-
+			doc.myText("In Charge",{align: "center"},306,755,true);			
+			
+			// Left
 			doc.autoTable(columns, rows, {
 				// tableLineColor: [189, 195, 199],
 				// tableLineWidth: 0.75,
-				margin: {top: 140, left: 23},
+				margin: {top: 140, left: 17},
 				tableWidth: 260,
 				columnStyles: {
-					day: {columnWidth: 30},
-					morning_in: {columnWidth: 45},
-					morning_out: {columnWidth: 45},
-					afternoon_in: {columnWidth: 45},
-					afternoon_out: {columnWidth: 45},
-					tardiness: {columnWidth: 50}
+					day: {columnWidth: 22},
+					morning_in: {columnWidth: 40},
+					morning_out: {columnWidth: 41},
+					afternoon_in: {columnWidth: 40},
+					afternoon_out: {columnWidth: 41},
+					tardiness: {columnWidth: 43},
+					undertime: {columnWidth: 46}
 				},
 				styles: {
 					lineColor: [75, 75, 75],
@@ -199,18 +201,20 @@ angular.module('dtr-module',[]).service('dtr',function() {
 				}
 			});
 
+			// Right
 			doc.autoTable(columns, rows, {
 				// tableLineColor: [189, 195, 199],
 				// tableLineWidth: 0.75,
-				margin: {top: 140, left: 329},
+				margin: {top: 140, left: 322},
 				tableWidth: 260,
 				columnStyles: {
-					day: {columnWidth: 30},
-					morning_in: {columnWidth: 45},
-					morning_out: {columnWidth: 45},
-					afternoon_in: {columnWidth: 45},
-					afternoon_out: {columnWidth: 45},
-					tardiness: {columnWidth: 50}
+					day: {columnWidth: 22},
+					morning_in: {columnWidth: 40},
+					morning_out: {columnWidth: 41},
+					afternoon_in: {columnWidth: 40},
+					afternoon_out: {columnWidth: 41},
+					tardiness: {columnWidth: 43},
+					undertime: {columnWidth: 46}
 				},
 				styles: {
 					lineColor: [75, 75, 75],
