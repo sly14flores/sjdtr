@@ -67,7 +67,8 @@ angular.module('dtr-module',[]).service('dtr',function() {
 				{title: "Time Out", dataKey: "morning_out"},
 				{title: "Time In", dataKey: "afternoon_in"},
 				{title: "Time Out", dataKey: "afternoon_out"},
-				{title: "Tardiness", dataKey: "tardiness"}
+				{title: "Tardiness", dataKey: "tardiness"},
+				{title: "Undertime", dataKey: "undertime"}
 			];
 
 			var rows = dtr.logs;

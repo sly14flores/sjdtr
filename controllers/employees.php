@@ -80,12 +80,15 @@ switch ($_GET['r']) {
 	break;
 	
 	case "dtr":
-
+		
+		require_once '../travel-orders-leaves.php';
+		
 		/*
 		**	check for dtr
 		*/
 		$con = new pdo_db("dtr");
 		$datef = $_POST['year']."-".$_POST['month'];
+		$travel_orders = new travel_orders($con,$_POST['id'],$datef);
 		$dtr = $con->getData("SELECT * FROM dtr WHERE eid = $_POST[id] AND ddate LIKE '$datef%'");
 		
 		$date = $_POST['year']."-".$_POST['month']."-01";
@@ -125,7 +128,8 @@ switch ($_GET['r']) {
 						"morning_out"=>$analyzed['morning_out'],
 						"afternoon_in"=>$analyzed['afternoon_in'],
 						"afternoon_out"=>$analyzed['afternoon_out'],
-						"tardiness"=>0
+						"tardiness"=>"00:00:00",
+						"undertime"=>"00:00:00"
 						);
 				
 				$start = date("Y-m-d", strtotime("+1 day", strtotime($start)));	
@@ -178,6 +182,7 @@ switch ($_GET['r']) {
 			
 		};
 		
+		# form
 		foreach ($dtr as $key => $value) {
 			
 			$dtr[$key]['sdate'] = date("j",strtotime($value['ddate']));
@@ -186,23 +191,39 @@ switch ($_GET['r']) {
 			$dtr[$key]['morning_out'] = date("H:i:s",strtotime($value['morning_out']));
 			$dtr[$key]['afternoon_in'] = date("H:i:s",strtotime($value['afternoon_in']));
 			$dtr[$key]['afternoon_out'] = date("H:i:s",strtotime($value['afternoon_out']));
+			
 			unset($dtr[$key]['eid']);
+			
+			# check travel order		
+			$travel_order = $travel_orders->getTo($value['ddate']);
+			$dtr[$key] = $travel_orders->travel_order($dtr[$key],$travel_order);
+			
+			# check leave
+			
 		};
 		
+		# report
 		$report = [];
 		foreach ($dtr as $key => $value) {
 			
-			$report[] = array(
+			$rpt = array(
 				"day"=>$value['sdate'],
 				"morning_in"=>($value['morning_in']=="00:00:00")?"-":$value['morning_in'],
 				"morning_out"=>($value['morning_out']=="00:00:00")?"-":$value['morning_out'],
 				"afternoon_in"=>($value['afternoon_in']=="00:00:00")?"-":$value['afternoon_in'],
 				"afternoon_out"=>($value['afternoon_out']=="00:00:00")?"-":$value['afternoon_out'],
-				"tardiness"=>"",
+				"tardiness"=>"00:00:00",
+				"undertime"=>"00:00:00"
 			);
+					
+			$travel_order = $travel_orders->getTo($value['ddate']);
+			$rpt = $travel_orders->travel_order($rpt,$travel_order);
+			
+			$report[] = $rpt;
 			
 		};
 
+		
 		
 		echo json_encode(array("form"=>$dtr,"report"=>$report));
 	

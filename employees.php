@@ -61,7 +61,13 @@ require_once 'authentication.php';
 		
 		background-color: rgba(0, 0, 0, 0.88);
 		
-	}	
+	}
+
+	.dtr-note {
+
+		background-color: #EAFAF1;
+	
+	}
 
 </style>	
 </head>
@@ -411,11 +417,11 @@ require_once 'authentication.php';
 								</form>
 								<table id="tab-dtr" class="table table-bordered">
 									<thead>
-										<tr><th>Date</th><th>Day</th><th>Time In</th><th>Time Out</th><th>Time In</th><th>Time Out</th><th>Tardiness</th><th></th></tr>
+										<tr><th>Date</th><th>Day</th><th>Time In</th><th>Time Out</th><th>Time In</th><th>Time Out</th><th>Tardiness</th><th>Undertime</th><th></th></tr>
 									</thead>
 									<tbody>
 										<tr ng-repeat="dtr_row in dtr">
-											<td style="text-align: center;">{{dtr_row.sdate}}</td><td>{{dtr_row.day}}</td><td>{{dtr_row.morning_in}}</td><td>{{dtr_row.morning_out}}</td><td>{{dtr_row.afternoon_in}}</td><td>{{dtr_row.afternoon_out}}</td><td>{{dtr_row.tardiness}}</td>
+											<td style="text-align: center;" ng-class="{'dtr-note': dtr_row.day_to}">{{dtr_row.sdate}}</td><td ng-class="{'dtr-note': dtr_row.day_to}">{{dtr_row.day}}</td><td ng-class="{'dtr-note': dtr_row.morning_in_to}">{{dtr_row.morning_in}}</td><td ng-class="{'dtr-note': dtr_row.morning_out_to}">{{dtr_row.morning_out}}</td><td ng-class="{'dtr-note': dtr_row.afternoon_in_to}">{{dtr_row.afternoon_in}}</td><td ng-class="{'dtr-note': dtr_row.afternoon_out_to}">{{dtr_row.afternoon_out}}</td><td>{{dtr_row.tardiness}}</td><td>{{dtr_row.undertime}}</td>
 											<td style="text-align: center;">
 												<i class="btn-icon-only icon-list-alt" ng-click="manageDTR.show(this,dtr_row)" style="cursor: pointer;"></i>										
 											</td>

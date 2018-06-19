@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 18, 2018 at 09:29 AM
+-- Generation Time: Jun 19, 2018 at 04:49 PM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -35504,8 +35504,43 @@ CREATE TABLE `dtr` (
   `morning_out` time NOT NULL,
   `afternoon_in` time NOT NULL,
   `afternoon_out` time NOT NULL,
-  `tardiness` float(10,2) NOT NULL
+  `tardiness` time DEFAULT NULL,
+  `undertime` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dtr`
+--
+
+INSERT INTO `dtr` (`id`, `eid`, `ddate`, `morning_in`, `morning_out`, `afternoon_in`, `afternoon_out`, `tardiness`, `undertime`) VALUES
+(1, 3, '2018-02-01', '08:51:53', '11:59:01', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(2, 3, '2018-02-02', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(3, 3, '2018-02-03', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(4, 3, '2018-02-04', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(5, 3, '2018-02-05', '07:46:31', '00:00:00', '13:04:52', '00:00:00', '00:00:00', '00:00:00'),
+(6, 3, '2018-02-06', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(7, 3, '2018-02-07', '08:56:02', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(8, 3, '2018-02-08', '08:49:10', '12:06:59', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(9, 3, '2018-02-09', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(10, 3, '2018-02-10', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(11, 3, '2018-02-11', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(12, 3, '2018-02-12', '08:01:56', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(13, 3, '2018-02-13', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(14, 3, '2018-02-14', '00:00:00', '12:14:31', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(15, 3, '2018-02-15', '00:00:00', '11:58:14', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(16, 3, '2018-02-16', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(17, 3, '2018-02-17', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(18, 3, '2018-02-18', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(19, 3, '2018-02-19', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(20, 3, '2018-02-20', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(21, 3, '2018-02-21', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(22, 3, '2018-02-22', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(23, 3, '2018-02-23', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(24, 3, '2018-02-24', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(25, 3, '2018-02-25', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(26, 3, '2018-02-26', '07:49:30', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(27, 3, '2018-02-27', '00:00:00', '12:17:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
+(28, 3, '2018-02-28', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -35724,6 +35759,34 @@ INSERT INTO `employees` (`id`, `empid`, `schedule_id`, `first_name`, `middle_nam
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `leaves`
+--
+
+CREATE TABLE `leaves` (
+  `id` int(11) NOT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  `leave_type` varchar(1000) DEFAULT NULL,
+  `remarks` varchar(1000) DEFAULT NULL,
+  `system_log` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leaves_dates`
+--
+
+CREATE TABLE `leaves_dates` (
+  `id` int(11) NOT NULL,
+  `leave_id` int(11) DEFAULT NULL,
+  `leave_date` date DEFAULT NULL,
+  `leave_duration` varchar(20) DEFAULT NULL,
+  `system_log` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `manual_logs`
 --
 
@@ -35781,35 +35844,37 @@ CREATE TABLE `schedule_details` (
   `lunch_break_cutoff` time DEFAULT NULL,
   `afternoon_in` time NOT NULL,
   `afternoon_cutoff` time DEFAULT NULL,
-  `afternoon_out` time NOT NULL
+  `afternoon_out` time NOT NULL,
+  `morning_grace_period` int(11) DEFAULT NULL,
+  `afternoon_grace_period` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `schedule_details`
 --
 
-INSERT INTO `schedule_details` (`id`, `schedule_id`, `day`, `morning_in`, `morning_cutoff`, `morning_out`, `lunch_break_cutoff`, `afternoon_in`, `afternoon_cutoff`, `afternoon_out`) VALUES
-(1, 1, 'Monday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00'),
-(2, 1, 'Tuesday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00'),
-(3, 1, 'Wednesday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00'),
-(4, 1, 'Thursday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00'),
-(5, 1, 'Friday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00'),
-(6, 1, 'Saturday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00'),
-(7, 1, 'Sunday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00'),
-(8, 2, 'Monday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
-(9, 2, 'Tuesday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
-(10, 2, 'Wednesday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
-(11, 2, 'Thursday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
-(12, 2, 'Friday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
-(13, 2, 'Saturday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
-(14, 2, 'Sunday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00'),
-(15, 3, 'Monday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00'),
-(16, 3, 'Tuesday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00'),
-(17, 3, 'Wednesday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00'),
-(18, 3, 'Thursday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00'),
-(19, 3, 'Friday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00'),
-(20, 3, 'Saturday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00'),
-(21, 3, 'Sunday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00');
+INSERT INTO `schedule_details` (`id`, `schedule_id`, `day`, `morning_in`, `morning_cutoff`, `morning_out`, `lunch_break_cutoff`, `afternoon_in`, `afternoon_cutoff`, `afternoon_out`, `morning_grace_period`, `afternoon_grace_period`) VALUES
+(1, 1, 'Monday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00', 10, 10),
+(2, 1, 'Tuesday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00', NULL, NULL),
+(3, 1, 'Wednesday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00', NULL, NULL),
+(4, 1, 'Thursday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00', NULL, NULL),
+(5, 1, 'Friday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00', NULL, NULL),
+(6, 1, 'Saturday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00', NULL, NULL),
+(7, 1, 'Sunday', '08:00:00', '10:30:00', '12:00:00', '12:30:00', '13:00:00', '15:30:00', '17:00:00', NULL, NULL),
+(8, 2, 'Monday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL),
+(9, 2, 'Tuesday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL),
+(10, 2, 'Wednesday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL),
+(11, 2, 'Thursday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL),
+(12, 2, 'Friday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL),
+(13, 2, 'Saturday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL),
+(14, 2, 'Sunday', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', NULL, NULL),
+(15, 3, 'Monday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00', NULL, NULL),
+(16, 3, 'Tuesday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00', NULL, NULL),
+(17, 3, 'Wednesday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00', NULL, NULL),
+(18, 3, 'Thursday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00', NULL, NULL),
+(19, 3, 'Friday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00', NULL, NULL),
+(20, 3, 'Saturday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00', NULL, NULL),
+(21, 3, 'Sunday', '06:00:00', '08:30:00', '10:00:00', '11:00:00', '12:00:00', '14:30:00', '16:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -35825,6 +35890,13 @@ CREATE TABLE `travel_orders` (
   `system_log` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `travel_orders`
+--
+
+INSERT INTO `travel_orders` (`id`, `employee_id`, `description`, `remarks`, `system_log`) VALUES
+(1, 3, 'Baguio City', NULL, '2018-06-19 16:11:30');
+
 -- --------------------------------------------------------
 
 --
@@ -35838,6 +35910,15 @@ CREATE TABLE `travel_orders_dates` (
   `to_duration` varchar(20) DEFAULT NULL,
   `system_log` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `travel_orders_dates`
+--
+
+INSERT INTO `travel_orders_dates` (`id`, `to_id`, `to_date`, `to_duration`, `system_log`) VALUES
+(1, 1, '2018-02-02', 'Wholeday', '2018-06-19 16:11:30'),
+(2, 1, '2018-02-05', 'AM', '2018-06-19 16:11:30'),
+(3, 1, '2018-02-06', 'PM', '2018-06-19 16:11:30');
 
 --
 -- Indexes for dumped tables
@@ -35862,6 +35943,20 @@ ALTER TABLE `dtr`
 --
 ALTER TABLE `employees`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `leaves`
+--
+ALTER TABLE `leaves`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `employee_id` (`employee_id`);
+
+--
+-- Indexes for table `leaves_dates`
+--
+ALTER TABLE `leaves_dates`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `leave_id` (`leave_id`);
 
 --
 -- Indexes for table `manual_logs`
@@ -35910,12 +36005,22 @@ ALTER TABLE `backlogs`
 -- AUTO_INCREMENT for table `dtr`
 --
 ALTER TABLE `dtr`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
+--
+-- AUTO_INCREMENT for table `leaves`
+--
+ALTER TABLE `leaves`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `leaves_dates`
+--
+ALTER TABLE `leaves_dates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `manual_logs`
 --
@@ -35935,12 +36040,12 @@ ALTER TABLE `schedule_details`
 -- AUTO_INCREMENT for table `travel_orders`
 --
 ALTER TABLE `travel_orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `travel_orders_dates`
 --
 ALTER TABLE `travel_orders_dates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
@@ -35950,6 +36055,18 @@ ALTER TABLE `travel_orders_dates`
 --
 ALTER TABLE `dtr`
   ADD CONSTRAINT `dtr_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `employees` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `leaves`
+--
+ALTER TABLE `leaves`
+  ADD CONSTRAINT `leaves_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `leaves_dates`
+--
+ALTER TABLE `leaves_dates`
+  ADD CONSTRAINT `leaves_dates_ibfk_1` FOREIGN KEY (`leave_id`) REFERENCES `leaves` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `manual_logs`
