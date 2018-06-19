@@ -230,7 +230,25 @@ require_once 'authentication.php';
 										</div>
 									</div>
 								</div>
-							</div>						
+							</div>
+							<div class="row">
+								<div class="span2">
+									<div class="control-group">
+										<label><strong>Morning Grace Period</strong></label>
+										<div class="controls">
+											<input type="number" class="span2" name="morning_grace_period" ng-model="detail.morning_grace_period" ng-disabled="controls.schedule.morning_grace_period" placeholder="In minutes">
+										</div>
+									</div>
+								</div>
+								<div class="span2">
+									<div class="control-group">
+										<label><strong>Afternoon Grace Period</strong></label>
+										<div class="controls">
+											<input type="number" class="span2" name="afternoon_grace_period" ng-model="detail.afternoon_grace_period" ng-disabled="controls.schedule.afternoon_grace_period" placeholder="In minutes">
+										</div>
+									</div>
+								</div>	
+							</div>
 						</fieldset>
 						</div>
 						<div class="row">
@@ -273,63 +291,18 @@ require_once 'authentication.php';
 </div>
 <!-- /footer --> 
 
-<div id="confirm" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label-confirm">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-confirm">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="notify" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label-notify">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-notify">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-<div id="modal-show" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="label-modal-show">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title" id="label-modal-show">Modal title</h4>
-	  </div>
-	  <div class="modal-body">
-		<p>One fine body&hellip;</p>
-	  </div>
-	  <div class="modal-footer">
-	  </div>
-	</div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
 <!-- Le javascript
 ================================================== --> 
 <!-- Placed at the end of the document so the pages load faster --> 
-<script src="angularjs/angular.min.js"></script>
-<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/jquery-migrate-3.0.0.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.blockUI.js"></script>
 <script src="js/bootstrap-notify-3.1.3/bootstrap-notify.min.js"></script>
+<script src="js/bootbox.min.js"></script>
 
+<script src="angularjs/1.6.4/angular.min.js"></script>
+<script src="angularjs/ui-bootstrap-tpls-2.5.0.min.js"></script>
 <script src="angularjs/utils/pagination/dirPagination.js"></script>
 
 <script src="modules/bootstrap-modal.js"></script>

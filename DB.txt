@@ -139,3 +139,9 @@ ALTER TABLE `leaves`
 --
 ALTER TABLE `leaves_dates`
   ADD CONSTRAINT `leaves_dates_ibfk_1` FOREIGN KEY (`leave_id`) REFERENCES `leaves` (`id`) ON DELETE CASCADE;
+
+schedule_details
+
+morning_grace_period
+afternoon_grace_period
+

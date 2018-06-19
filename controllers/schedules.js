@@ -6,7 +6,21 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 		
 		var self = this;
 		
-		this.controls = function(scope,opt) {
+		function validate(scope,form) {
+			
+			var controls = scope.frmHolder[form].$$controls;
+			
+			angular.forEach(controls,function(elem,i) {
+
+				if (elem.$$attr.$attr.required) elem.$touched = elem.$invalid;
+									
+			});
+
+			return scope.frmHolder[form].$invalid;
+			
+		};		
+		
+		self.controls = function(scope,opt) {
 			
 			scope.controls.schedule = {
 				description: opt,
@@ -18,6 +32,8 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				afternoon_in: opt,
 				afternoon_cutoff: opt,
 				afternoon_out: opt,
+				morning_grace_period: opt,
+				afternoon_grace_period: opt,
 				saveBtn: opt,
 				cancelBtn: opt,
 				editBtn: opt,
@@ -26,7 +42,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			
 		};
 		
-		this.start = function(scope) {
+		self.start = function(scope) {
 
 			$http({
 			  method: 'POST',
@@ -41,11 +57,9 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 				
 			});
 			
-		};		
+		};
 		
-		this.required = [];
-		
-		this.onAdd = function(scope) {
+		self.onAdd = function(scope) {
 			self.controls(scope,false);
 			scope.controls.schedule.addBtn = true;
 			scope.controls.schedule.editBtn = true;
@@ -54,21 +68,21 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			scope.views.cancelCloseTxt = 'Cancel';			
 		};
 		
-		this.onUpdate = function(scope) {
+		self.onUpdate = function(scope) {
 			self.controls(scope,true);
 			scope.controls.schedule.addBtn = false;
 			scope.controls.schedule.editBtn = true;
 			scope.controls.schedule.delBtn = true;		
 		};
 		
-		this.onCancel = function(scope) {
+		self.onCancel = function(scope) {
 			self.controls(scope,true);
 			scope.controls.schedule.addBtn = false;
 			scope.controls.schedule.editBtn = true;
 			scope.controls.schedule.delBtn = true;	
 		};
 		
-		this.onView = function(scope) {
+		self.onView = function(scope) {
 			self.controls(scope,true);
 			scope.controls.schedule.addBtn = false;
 			scope.controls.schedule.editBtn = false;
@@ -77,21 +91,21 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			scope.views.cancelCloseTxt = 'Close';			
 		};
 		
-		this.onEdit = function(scope) {
+		self.onEdit = function(scope) {
 			self.controls(scope,false);
 			scope.controls.schedule.addBtn = true;
 			scope.controls.schedule.editBtn = true;
 			scope.controls.schedule.delBtn = false;
 		};
 		
-		this.onClose = function(scope) {
+		self.onClose = function(scope) {
 			self.controls(scope,true);
 			scope.controls.schedule.addBtn = false;
 			scope.controls.schedule.editBtn = false;
 			scope.controls.schedule.delBtn = false;		
 		};
 		
-		this.add = function(scope) {
+		self.add = function(scope) {
 			
 			self.onAdd(scope);
 			
@@ -114,7 +128,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			
 		};
 		
-		this.update = function(scope) {
+		self.update = function(scope) {
 			
 			if (scope.frmHolder.schedule.$invalid) {
 				scope.frmHolder.schedule.description.$touched = true;
@@ -146,7 +160,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			
 		};
 		
-		this.cancel = function(scope) {
+		self.cancel = function(scope) {
 			
 			if (scope.views.cancelCloseTxt == 'Close') {
 				self.onClose(scope);
@@ -174,7 +188,7 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			
 		};
 		
-		this.view = function(scope) {
+		self.view = function(scope) {
 			
 			if (scope.views.onEdit) {
 				bootstrapNotify.show('danger','Please close the schedule currently being edited to view another schedule');
@@ -214,22 +228,20 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			
 		};
 		
-		this.edit = function(scope) {
+		self.edit = function(scope) {
 			
 			self.onEdit(scope);
 			scope.views.onEdit = true;
 			
 		};
 		
-		this.confirmDel = function(scope) {
+		self.confirmDel = function(scope) {
 
-			bootstrapModal.confirm(scope,'Are you sure want to delete this schedule?','appService.del(this)');
+			bootstrapModal.confirm(scope,'Confirmation','Are you sure want to delete this schedule?',self.del,function() {});
 			
 		};
 		
-		this.del = function(scope) {
-			
-			bootstrapModal.closeConfirm();
+		self.del = function(scope) {
 			
 			$http({
 			  method: 'POST',
@@ -250,15 +262,17 @@ app.factory('appService',function($http,$timeout,bootstrapNotify,bootstrapModal,
 			
 		};
 
-		this.clone = function(scope) {
-			console.log(scope);
+		self.clone = function(scope) {
+
 			scope.detail.morning_in = scope.schedule.details[0]['morning_in'];
 			scope.detail.morning_cutoff = scope.schedule.details[0]['morning_cutoff']; 
 			scope.detail.morning_out = scope.schedule.details[0]['morning_out']; 
 			scope.detail.lunch_break_cutoff = scope.schedule.details[0]['lunch_break_cutoff']; 
 			scope.detail.afternoon_in = scope.schedule.details[0]['afternoon_in']; 
 			scope.detail.afternoon_cutoff = scope.schedule.details[0]['afternoon_cutoff']; 
-			scope.detail.afternoon_out = scope.schedule.details[0]['afternoon_out']; 
+			scope.detail.afternoon_out = scope.schedule.details[0]['afternoon_out'];
+			scope.detail.morning_grace_period = scope.schedule.details[0]['morning_grace_period'];
+			scope.detail.afternoon_grace_period = scope.schedule.details[0]['afternoon_grace_period'];
 			
 		};
 		
@@ -286,13 +300,13 @@ $scope.schedule_struct = {
 	description: "",
 	flexible: "No",
 	details: [
-		{id: 0, day: "Monday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")},
-		{id: 0, day: "Tuesday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")},
-		{id: 0, day: "Wednesday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")},
-		{id: 0, day: "Thursday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")},
-		{id: 0, day: "Friday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")},
-		{id: 0, day: "Saturday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")},
-		{id: 0, day: "Sunday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0")}
+		{id: 0, day: "Monday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0"), morning_grace_period: new Date("0"), afternoon_grace_period: new Date("0")},
+		{id: 0, day: "Tuesday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0"), morning_grace_period: new Date("0"), afternoon_grace_period: new Date("0")},
+		{id: 0, day: "Wednesday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0"), morning_grace_period: new Date("0"), afternoon_grace_period: new Date("0")},
+		{id: 0, day: "Thursday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0"), morning_grace_period: new Date("0"), afternoon_grace_period: new Date("0")},
+		{id: 0, day: "Friday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0"), morning_grace_period: new Date("0"), afternoon_grace_period: new Date("0")},
+		{id: 0, day: "Saturday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0"), morning_grace_period: new Date("0"), afternoon_grace_period: new Date("0")},
+		{id: 0, day: "Sunday", morning_in: new Date("0"), morning_cutoff: new Date("0"), morning_out: new Date("0"), lunch_break_cutoff: new Date("0"), afternoon_in: new Date("0"), afternoon_cutoff: new Date("0"), afternoon_out: new Date("0"), morning_grace_period: new Date("0"), afternoon_grace_period: new Date("0")}
 	]
 };
 
