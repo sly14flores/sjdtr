@@ -56,6 +56,14 @@ class log_order {
 		return $allotment;
 
 	}
+	
+	function tardiness() {
+		
+	}
+	
+	function undertime() {
+		
+	}
 
 }
 

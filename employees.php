@@ -421,7 +421,7 @@ require_once 'authentication.php';
 									</thead>
 									<tbody>
 										<tr ng-repeat="dtr_row in dtr">
-											<td style="text-align: center;" ng-class="{'dtr-note': dtr_row.day_to}">{{dtr_row.sdate}}</td><td ng-class="{'dtr-note': dtr_row.day_to}">{{dtr_row.day}}</td><td ng-class="{'dtr-note': dtr_row.morning_in_to}">{{dtr_row.morning_in}}</td><td ng-class="{'dtr-note': dtr_row.morning_out_to}">{{dtr_row.morning_out}}</td><td ng-class="{'dtr-note': dtr_row.afternoon_in_to}">{{dtr_row.afternoon_in}}</td><td ng-class="{'dtr-note': dtr_row.afternoon_out_to}">{{dtr_row.afternoon_out}}</td><td>{{dtr_row.tardiness}}</td><td>{{dtr_row.undertime}}</td>
+											<td style="text-align: center;" ng-class="{'dtr-note': dtr_row.day_to||dtr_row.day_leave}">{{dtr_row.sdate}}</td><td ng-class="{'dtr-note': dtr_row.day_to||dtr_row.day_leave}">{{dtr_row.day}}</td><td ng-class="{'dtr-note': dtr_row.morning_in_to||dtr_row.morning_in_leave}">{{dtr_row.morning_in}}</td><td ng-class="{'dtr-note': dtr_row.morning_out_to||dtr_row.morning_out_leave}">{{dtr_row.morning_out}}</td><td ng-class="{'dtr-note': dtr_row.afternoon_in_to||dtr_row.afternoon_in_leave}">{{dtr_row.afternoon_in}}</td><td ng-class="{'dtr-note': dtr_row.afternoon_out_to||dtr_row.afternoon_out_leave}">{{dtr_row.afternoon_out}}</td><td>{{dtr_row.tardiness}}</td><td>{{dtr_row.undertime}}</td>
 											<td style="text-align: center;">
 												<i class="btn-icon-only icon-list-alt" ng-click="manageDTR.show(this,dtr_row)" style="cursor: pointer;"></i>										
 											</td>

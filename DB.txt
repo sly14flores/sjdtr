@@ -145,5 +145,5 @@ schedule_details
 morning_grace_period
 afternoon_grace_period
 
-ALTER TABLE `dtr` CHANGE `tardiness` `tardiness` TIME NULL;
-ALTER TABLE `dtr`  ADD `undertime` TIME NULL  AFTER `tardiness`;
+ALTER TABLE `dtr` CHANGE `tardiness` `tardiness` VARCHAR(10) NULL DEFAULT NULL;
+ALTER TABLE `dtr` CHANGE `undertime` `undertime` VARCHAR(10) NULL DEFAULT NULL;
