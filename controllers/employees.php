@@ -135,7 +135,9 @@ switch ($_GET['r']) {
 				);
 				
 				# tardiness / undertime
-				$row = $analyze->tardiness_undertime($row);
+				$travel_order = $travel_orders->getTo($row['ddate']);
+				$leave = $leaves->getLeave($row['ddate']);			
+				$row = $analyze->tardiness_undertime($row,$travel_order,$leave);
 				
 				$dtr[] = $row;
 				
@@ -181,7 +183,9 @@ switch ($_GET['r']) {
 				$_dtr[$key]['tardiness'] = "";
 				$_dtr[$key]['undertime'] = "";
 
-				$_dtr[$key] = $analyze->tardiness_undertime($_dtr[$key]);
+				$travel_order = $travel_orders->getTo($_dtr[$key]['ddate']);
+				$leave = $leaves->getLeave($_dtr[$key]['ddate']);
+				$_dtr[$key] = $analyze->tardiness_undertime($_dtr[$key],$travel_order,$leave);
 
 				unset($_dtr[$key]['eid']);
 				unset($_dtr[$key]['ddate']);
@@ -203,8 +207,8 @@ switch ($_GET['r']) {
 			$dtr[$key]['morning_out'] = ($value['morning_out']=="00:00:00")?"":date("H:i:s",strtotime($value['morning_out']));
 			$dtr[$key]['afternoon_in'] = ($value['afternoon_in']=="00:00:00")?"":date("H:i:s",strtotime($value['afternoon_in']));
 			$dtr[$key]['afternoon_out'] = ($value['afternoon_out']=="00:00:00")?"":date("H:i:s",strtotime($value['afternoon_out']));
-			$dtr[$key]['tardiness'] = $value['tardiness'];
-			$dtr[$key]['undertime'] = $value['undertime'];
+			$dtr[$key]['tardiness'] = ($value['tardiness']=="00:00:00")?"":$value['tardiness'];
+			$dtr[$key]['undertime'] = ($value['undertime']=="00:00:00")?"":$value['undertime'];
 			
 			unset($dtr[$key]['eid']);
 			
@@ -228,8 +232,8 @@ switch ($_GET['r']) {
 				"morning_out"=>($value['morning_out']=="00:00:00")?"-":$value['morning_out'],
 				"afternoon_in"=>($value['afternoon_in']=="00:00:00")?"-":$value['afternoon_in'],
 				"afternoon_out"=>($value['afternoon_out']=="00:00:00")?"-":$value['afternoon_out'],
-				"tardiness"=>($value['tardiness']==null)?"":$value['tardiness'],
-				"undertime"=>($value['undertime']==null)?"":$value['undertime']
+				"tardiness"=>(($value['tardiness']==null)||($value['tardiness']=="00:00:00"))?"":$value['tardiness'],
+				"undertime"=>(($value['undertime']==null)||($value['undertime']=="00:00:00"))?"":$value['undertime']
 			);
 					
 			# travel order
@@ -242,9 +246,7 @@ switch ($_GET['r']) {
 			
 			$report[] = $rpt;
 			
-		};
-
-		
+		};		
 		
 		echo json_encode(array("form"=>$dtr,"report"=>$report));
 	

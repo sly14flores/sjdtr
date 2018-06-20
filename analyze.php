@@ -57,8 +57,8 @@ class log_order {
 
 	}
 	
-	function tardiness_undertime($row) {
-		
+	function tardiness_undertime($row,$travel_order,$leave) {
+
 		$morning_tardiness_cutoff = $row['ddate']." ".$this->schedules[date("l",strtotime($row['ddate']))]['morning_in'];
 		$morning_undertime_cutoff = $row['ddate']." ".$this->schedules[date("l",strtotime($row['ddate']))]['morning_out'];
 		$afternoon_tardiness_cutoff = $row['ddate']." ".$this->schedules[date("l",strtotime($row['ddate']))]['afternoon_in'];
@@ -71,18 +71,39 @@ class log_order {
 		$morning_out = $row['ddate']." ".$row['morning_out'];
 		$afternoon_in = $row['ddate']." ".$row['afternoon_in'];
 		$afternoon_out = $row['ddate']." ".$row['afternoon_out'];
-		
+
 		$morning_tardiness = (strtotime($morning_in)>strtotime($morning_tardiness_cutoff))?(strtotime($morning_in)-strtotime($morning_tardiness_cutoff)):0;
-		$afternoon_tardiness = (strtotime($afternoon_in)>strtotime($afternoon_tardiness_cutoff))?(strtotime($afternoon_in)-strtotime($afternoon_tardiness_cutoff)):0;
-		
 		$morning_undertime = (strtotime($morning_out)<strtotime($morning_undertime_cutoff))?(strtotime($morning_undertime_cutoff)-strtotime($morning_out)):0;
-		$afternoon_undertime = (strtotime($afternoon_out)<strtotime($afternoon_undertime_cutoff))?(strtotime($afternoon_undertime_cutoff)-strtotime($afternoon_out)):0;
+		$afternoon_tardiness = (strtotime($afternoon_in)>strtotime($afternoon_tardiness_cutoff))?(strtotime($afternoon_in)-strtotime($afternoon_tardiness_cutoff)):0;
+		$afternoon_undertime = (strtotime($afternoon_out)<strtotime($afternoon_undertime_cutoff))?(strtotime($afternoon_undertime_cutoff)-strtotime($afternoon_out)):0;		
 		
-		$tardiness = $morning_tardiness;
-		$undertime = $morning_undertime;
+		if (($travel_order['to']) || ($leave['leave'])) {
+			if (($travel_order['duration'] == "Wholeday") || ($leave['duration'] == "Wholeday")) {
+				$morning_tardiness = 0;
+				$morning_undertime = 0;		
+				$afternoon_tardiness = 0;
+				$afternoon_undertime = 0;
+			};
+			if (($travel_order['duration'] == "AM") || ($leave['duration'] == "AM")) {
+				$morning_tardiness = 0;
+				$morning_undertime = 0;
+			};
+			if (($travel_order['duration'] == "PM") || ($leave['duration'] == "PM")) {
+				$afternoon_tardiness = 0;
+				$afternoon_undertime = 0;
+			};			
+		};
 		
-		$row['tardiness'] = $tardiness;
-		$row['undertime'] = $undertime;
+		if (date("H:i:s",strtotime($morning_in))=="00:00:00") $morning_tardiness = 0;
+		if (date("H:i:s",strtotime($morning_out))=="00:00:00") $morning_undertime = 0;
+		if (date("H:i:s",strtotime($afternoon_in))=="00:00:00") $afternoon_tardiness = 0;
+		if (date("H:i:s",strtotime($afternoon_out))=="00:00:00") $afternoon_undertime = 0;
+		
+		$tardiness = $morning_tardiness+$afternoon_tardiness;
+		$undertime = $morning_undertime+$afternoon_undertime;		
+		
+		$row['tardiness'] = gmdate('H:i:s',$tardiness);
+		$row['undertime'] = gmdate('H:i:s',$undertime);
 		
 		return $row;
 		
