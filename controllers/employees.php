@@ -197,7 +197,7 @@ switch ($_GET['r']) {
 			$dtr = $con->getData("SELECT * FROM dtr WHERE eid = $_POST[id] AND ddate LIKE '$datef%'");			
 			
 		};
-		
+
 		# form
 		foreach ($dtr as $key => $value) {
 			
@@ -227,6 +227,7 @@ switch ($_GET['r']) {
 		foreach ($dtr as $key => $value) {
 			
 			$rpt = array(
+				"date"=>$value['ddate'],
 				"day"=>$value['sdate'],
 				"morning_in"=>($value['morning_in']=="00:00:00")?"-":$value['morning_in'],
 				"morning_out"=>($value['morning_out']=="00:00:00")?"-":$value['morning_out'],

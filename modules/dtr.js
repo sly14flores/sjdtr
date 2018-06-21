@@ -1,11 +1,31 @@
-angular.module('dtr-module',[]).service('dtr',function() {
+angular.module('dtr-module',['window-open-post']).service('dtr',function(printPost) {
 	
 	function dtr() {		
 		
 		var self = this;		
 		
 		self.print = function(scope,dtr) {
+
+			switch (scope.settings.dtr.report) {
+				
+				case 'form48':
+
+					printForm48(scope,dtr);				
+				
+				break;
+
+				case 'pglu':
+
+					printPost.show('reports/dtr.php',dtr);
+
+				break;
+				
+			};					
+
+		};
 		
+		function printForm48(scope,dtr) {
+			
 		var months = {
 			"01": "January",
 			"02": "February",
@@ -239,8 +259,8 @@ angular.module('dtr-module',[]).service('dtr',function() {
 			});
 
 			var blob = doc.output("blob");
-			window.open(URL.createObjectURL(blob));	
-
+			window.open(URL.createObjectURL(blob));			
+			
 		};
 		
 	};

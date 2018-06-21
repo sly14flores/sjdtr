@@ -1,14 +1,17 @@
 <?php
 
+$params = json_decode($_POST['params'],true);
+
 require('fpdf181/fpdf.php');
 require('../db.php');
 
+require_once '../settings.php';
+
 $con = new pdo_db();
 
-$datef = "$_POST[year]-$_POST[month]";
-$date = "$_POST[year]-$_POST[month]-01";
-$department = "BDH";
-$employee = $con->getData("SELECT empid, UPPER(CONCAT(last_name, ', ', first_name, ' ', SUBSTRING(middle_name,1,1), '.')) employee, appointment_status FROM employees WHERE id = $_POST[id]");
+$date = $params['year']."-".$params['month']."-01";
+$department = $settings['dtr']['agency'];
+$employee = $params['info']['last_name'].", ".$params['info']['first_name']." ".$params['info']['middle_name'];
 
 class PDF extends FPDF
 {
@@ -46,17 +49,17 @@ function Footer()
 function table($header, $data)
 {
 	
-	global $date, $department, $employee;
+	global $params, $date, $department, $employee;
 	
 	$this->SetMargins(20,0);
     $this->Ln(2);
     $this->SetTextColor(66,66,66);
 	$this->SetFont('Arial','B',10);
-    $this->Cell(0,5,$employee[0]['employee'],0,1,'L');
+    $this->Cell(0,5,$employee,0,1,'L');
     $this->Ln(1);	
 	$this->SetFont('Arial','',9);
     $this->Cell(87.5,4,date("F Y",strtotime($date)),0,0,'L');
-    $this->Cell(87.5,4,"$department ".$employee[0]['appointment_status'],0,0,'R');
+    $this->Cell(87.5,4,"$department ".$params['info']['appointment_status'],0,0,'R');
     
 	$this->Ln(7);
 	
@@ -107,7 +110,7 @@ function table($header, $data)
 	$this->SetFont('Arial','B',8);	
     $this->Cell(0,4,"Verified as to the prescribed office hours",0,1,'R');
 	$this->Ln(10);	
-    $this->Cell(87.5,5,$employee[0]['employee'],0,0,'C');
+    $this->Cell(87.5,5,$employee,0,0,'C');
     $this->Cell(87.5,5,"Head/Supervisor",0,0,'C');
 	$this->SetDrawColor(92,92,92);	
 	$this->Line(30,246,97,246);
@@ -123,8 +126,8 @@ $pdf->AddPage();
 $pdf->SetFont('Arial','',14);
 
 $header = array(
-	array(25=>"Date"),
-	array(20=>"Day"),
+	array(15=>"Date"),
+	array(30=>"Day"),
 	array(25=>"Time In"),
 	array(25=>"Time Out"),
 	array(25=>"Time In"),
@@ -132,24 +135,17 @@ $header = array(
 	array(30=>"Tardiness")
 );
 
-$sql = "SELECT * FROM dtr WHERE eid = $_POST[id] AND ddate LIKE '$datef%'";
-$dtr = $con->getData($sql);
-
 $data = [];
-foreach ($dtr as $row) {
+foreach ($params['logs'] as $row) {
 	
-	$row['morning_in'] = ($row['morning_in'] == "00:00:00")?"":date("H:i:s",strtotime($row['morning_in']));
-	$row['morning_out'] = ($row['morning_out'] == "00:00:00")?"":date("H:i:s",strtotime($row['morning_out']));
-	$row['afternoon_in'] = ($row['afternoon_in'] == "00:00:00")?"":date("H:i:s",strtotime($row['afternoon_in']));
-	$row['afternoon_out'] = ($row['afternoon_out'] == "00:00:00")?"":date("H:i:s",strtotime($row['afternoon_out']));
-	
-	$data[] = array(date("j",strtotime($row['ddate'])),
-			date("D",strtotime($row['ddate'])),
-			$row['morning_in'],
-			$row['morning_out'],
-			$row['afternoon_in'],
-			$row['afternoon_out'],
-			""
+	$data[] = array(
+		date("j",strtotime($row['date'])),
+		date("D",strtotime($row['date'])),
+		$row['morning_in'],
+		$row['morning_out'],
+		$row['afternoon_in'],
+		$row['afternoon_out'],
+		""
 	);
 	
 };

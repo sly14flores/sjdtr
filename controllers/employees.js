@@ -668,6 +668,18 @@ leaves.data($scope);
 $scope.t_os = tos;
 $scope.e_leaves = leaves;
 
+$http({
+	url: 'settings.php',
+	method: 'GET',
+	params: {request: true}
+}).then(function success(response) {
+	
+	$scope.settings = response.data;
+	
+}, function eror(response) {
+	
+});
+
 });
 
 app.filter('pagination', function() {

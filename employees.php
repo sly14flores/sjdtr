@@ -597,6 +597,7 @@ require_once 'authentication.php';
 <script src="modules/block-ui.js"></script>
 <script src="modules/bootstrap-notify.js"></script>
 <script src="modules/account.js"></script>
+<script src="modules/window-open-post.js"></script>
 <script src="modules/dtr.js"></script>
 <script src="modules/tos.js"></script>
 <script src="modules/leaves.js"></script>
