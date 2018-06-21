@@ -77,7 +77,7 @@ class log_order {
 		$afternoon_tardiness = (strtotime($afternoon_in)>strtotime($afternoon_tardiness_cutoff))?(strtotime($afternoon_in)-strtotime($afternoon_tardiness_cutoff)):0;
 		$afternoon_undertime = (strtotime($afternoon_out)<strtotime($afternoon_undertime_cutoff))?(strtotime($afternoon_undertime_cutoff)-strtotime($afternoon_out)):0;		
 		
-		if (($travel_order['to']) || ($leave['leave'])) {
+		if (($travel_order['to']) || ($leave['leave'])) { # on travel and leave
 			if (($travel_order['duration'] == "Wholeday") || ($leave['duration'] == "Wholeday")) {
 				$morning_tardiness = 0;
 				$morning_undertime = 0;		
@@ -92,6 +92,13 @@ class log_order {
 				$afternoon_tardiness = 0;
 				$afternoon_undertime = 0;
 			};			
+		};
+		
+		if ($this->flexible) { # schedule is flexible
+			$morning_tardiness = 0;
+			$morning_undertime = 0;		
+			$afternoon_tardiness = 0;
+			$afternoon_undertime = 0;		
 		};
 		
 		if (date("H:i:s",strtotime($morning_in))=="00:00:00") $morning_tardiness = 0;
