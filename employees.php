@@ -371,7 +371,21 @@ require_once 'authentication.php';
 								
 							</div>
 							<div class="tab-pane" id="dtr">
-								<div class="pull-right"><a href="javascript:;" class="btn btn-small btn-primary" ng-click="appService.printDTR(this)" ng-disabled="generate.month == null"><i class="btn-icon-only icon-print"></i></a></div>
+								<div class="pull-right">
+									<form>
+										<fieldset>
+											<div class="row">
+												<div class="span3" style="text-align: right;">
+													<div class="control-group">													
+														TO/Leave <input type="checkbox" class="form-check-input" ng-model="views.print.to_leave">
+														Tardiness/Undertime <input type="checkbox" class="form-check-input" ng-model="views.print.tardiness_undertime">
+														<a href="javascript:;" class="btn btn-small btn-primary" ng-click="appService.printDTR(this)" ng-disabled="generate.month == null"><i class="btn-icon-only icon-print"></i></a>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</form>
+								</div>
 								<div style="clear: both;"></div>
 								<form style="margin-top: 20px;" name="frmHolder.dtr" autocomplete="off">
 									<fieldset>

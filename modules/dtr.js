@@ -5,7 +5,10 @@ angular.module('dtr-module',[]).service('dtr',function() {
 		var self = this;		
 		
 		self.print = function(scope,dtr) {
-		
+			
+		var to_leave = scope.views.print.to_leave;
+		var tardiness_undertime = scope.views.print.tardiness_undertime;
+
 		var months = {
 			"01": "January",
 			"02": "February",
@@ -71,8 +74,55 @@ angular.module('dtr-module',[]).service('dtr',function() {
 				{title: "Undertime", dataKey: "undertime"}
 			];
 
-			var rows = dtr.logs;
+			var rows = [];
+			
+			angular.forEach(dtr.logs, function(item,i) {
+				
+				var row = {
+					day: item.sdate,
+					morning_in: item.morning_in,
+					morning_out: item.morning_out,
+					afternoon_in: item.afternoon_in,
+					afternoon_out: item.afternoon_out,
+					tardiness: item.tardiness,
+					undertime: item.undertime
+				};
 
+				if (!to_leave) {
+					
+					if (item.day_to) {
+						
+						if (item.morning_in_to) row.morning_in = '';
+						if (item.morning_in_to) row.morning_out = '';						
+						if (item.afternoon_in_to) row.afternoon_in = '';
+						if (item.afternoon_out_to) row.afternoon_out = ''
+						
+					};
+					
+					if (item.day_leave) {
+						
+						if (item.morning_in_leave) row.morning_in = '';
+						if (item.morning_in_leave) row.morning_out = '';						
+						if (item.afternoon_in_leave) row.afternoon_in = '';
+						if (item.afternoon_out_leave) row.afternoon_out = ''						
+						
+					};
+					
+				};
+				
+				if (!tardiness_undertime) {
+
+					row.tardiness = '';
+					row.undertime = '';
+
+				};
+				
+				rows.push(row);
+
+			});
+			
+			console.log(dtr.logs);
+			
 			// Cut lengthwise
 			doc.setDrawColor(225,225,225);
 			doc.line(306,0,306,792);

@@ -544,6 +544,10 @@ $scope.pageSize = 15;
 $scope.views = {};
 $scope.frmHolder = {};
 
+$scope.views.print = {};
+$scope.views.print.to_leave = true;
+$scope.views.print.tardiness_undertime = true;
+
 $scope.views.profilePicture = 'img/avatar.png';
 $scope.views.showProPicUploadProgress = false;
 

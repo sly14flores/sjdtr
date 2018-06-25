@@ -242,7 +242,7 @@ switch ($_GET['r']) {
 			
 			# leave
 			$leave = $leaves->getLeave($value['ddate']);
-			$dtr[$key] = $leaves->leave($dtr[$key],$leave);				
+			$rpt = $leaves->leave($dtr[$key],$leave);				
 			
 			$report[] = $rpt;
 			
